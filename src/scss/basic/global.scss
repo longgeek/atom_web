@@ -1,0 +1,30 @@
+.opacity {
+    opacity: 1 !important;
+}
+
+// 自动换行，包括 URL
+.wrap {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+// 不换行，显示省略号
+.nowrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.font-size-14 {
+    font-size: 14px !important;
+}
+
+.font-weight {
+    font-weight: 600;
+}
+
+section {
+    animation: fadeIn;
+    animation-duration: 2s;
+}

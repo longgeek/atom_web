@@ -1,0 +1,9 @@
+.event-detail img,
+.project-detail img {
+    max-width: 100%;
+    margin: 10px 0;
+    height: auto;
+    border-radius: 10px !important;
+    -webkit-box-shadow: 0 0 3px rgb(60 72 88 / 15%) !important;
+    box-shadow: 0 0 3px rgb(60 72 88 / 15%) !important;
+}

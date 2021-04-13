@@ -1,0 +1,16 @@
+// 全局变量
+@import "_variables.scss";
+
+// 基本样式
+@import "basic/animation.scss";               // Basic 动画
+@import "basic/global.scss";                  // 全局 CSS 样式
+@import "basic/color.scss";                   // 默认颜色
+@import "basic/main-style-light.scss";        // 默认采用 Light 风格
+
+// 动画效果
+@import "animation/flying-icon.scss";
+
+// 各页面的样式
+@import "pages/project.scss";
+@import "pages/home.scss";
+
