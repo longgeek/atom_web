@@ -54,32 +54,6 @@ export default {
                 break;
             }
         }
-
-        if (matchingMenuItem) {
-            matchingMenuItem.classList.add("active");
-            var parent = matchingMenuItem.parentElement;
-
-            /**
-             * TODO: This is hard coded way of expading/activating parent menu dropdown and working till level 3.
-             * We should come up with non hard coded approach
-             */
-            if (parent) {
-                parent.classList.add("active");
-                const parent2 = parent.parentElement;
-                if (parent2) {
-                    parent2.classList.add("active");
-                    const parent3 = parent2.parentElement;
-                    if (parent3) {
-                        parent3.classList.add("active");
-                        const parent4 = parent3.parentElement;
-                        if (parent4) {
-                            const parent5 = parent4.parentElement;
-                            parent5.classList.add("active");
-                        }
-                    }
-                }
-            }
-        }
     },
     methods: {
         /**
@@ -214,7 +188,7 @@ export default {
                         class="navigation-menu"
                         :class="{ 'nav-light': navLight === true }"
                     >
-                        <li :class="{ active: $route.name == 'home'}">
+                        <li :class="{ active: $route.name === 'home'}">
                             <router-link to="/" class="side-nav-link-ref">首页</router-link>
                         </li>
                         <li :class="{ active: $route.name == 'project' || $route.name == 'project-detail' }">

@@ -22,7 +22,6 @@ module.exports = {
             "vuex": "Vuex",
             "axios": "axios",
             "bootstrap-vue": "BootstrapVue",
-            "vue-meta": "VueMeta",
             "marked": "marked",
         }
     },
