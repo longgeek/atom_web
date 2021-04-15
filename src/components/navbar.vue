@@ -191,13 +191,20 @@ export default {
                         <li :class="{ active: $route.name === 'home'}">
                             <router-link to="/" class="side-nav-link-ref">首页</router-link>
                         </li>
-                        <li :class="{ active: $route.name == 'project' || $route.name == 'project-detail' }">
+                        <li :class="{
+                            active: $route.name == 'project' ||
+                                    $route.name == 'project-detail'
+                        }">
                             <router-link to="/project" class="side-nav-link-ref">孵化项目</router-link>
                         </li>
                         <li :class="{ active: $route.name == 'partner'}">
                             <router-link to="/partner" class="side-nav-link-ref">合作者关系</router-link>
                         </li>
-                        <li :class="{ active: $route.name == 'event' || $route.name == 'event-detail' }">
+                        <li :class="{
+                            active: $route.name == 'event' ||
+                                    $route.name == 'event-detail' ||
+                                    $route.name == 'event-column'
+                        }">
                             <router-link to="/event" class="side-nav-link-ref">社区活动</router-link>
                         </li>
                         <li :class="{ active: $route.name == 'aboutus'}">

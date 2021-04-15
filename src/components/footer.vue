@@ -31,8 +31,7 @@ export default {
                             <img src="@/assets/images/logo-light.png" height="40" alt="" />
                         </a>
                         <p class="mt-4">
-                            开放原子开源基金会（以下简称“开源基金会”）是在民政部注册的致力于开源产业公益事业的非营利性独立法人机构。
-                            开源基金会的服务范围包括开源软件、开源硬件、开源芯片及开源内容等，为各类开源项目提供中立的知识产权托管，保证项目的持续发展不受第三方影响，通过开放治理寻求更丰富的社区资源的支持与帮助，包括募集并管理资金，提供法律、财务等专业支持。
+                            开放原子开源基金会拟通过共建、共治、共享的方式，系统性打造信息产业和工业开源开放框架，搭建国际开源社区，提升行业协作效率，赋能千行百业。目前开放原子开源基金会业务范围主要包括为各类开源软件、开源硬件、开源芯片、开源内容提供中立的知识产权托管、战略咨询、法务咨询、项目运营、品牌营销和教育培训等服务。
                         </p>
                         <ul class="list-unstyled social-icon social mb-0 mt-4">
                             <li class="list-inline-item">
@@ -45,12 +44,12 @@ export default {
                                 </a>
                             </li>
                             <li class="list-inline-item ml-1">
-                                <a href="https://weibo.com/u/7495008325" class="rounded">
+                                <a href="https://weibo.com/u/7495008325" target="_blank" class="rounded">
                                     <i class="mdi mdi-sina-weibo"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item ml-1">
-                                <a href="https://twitter.com/0ptlEua40J852op" class="rounded">
+                                <a href="https://twitter.com/0ptlEua40J852op" target="_blank" class="rounded">
                                     <i class="mdi mdi-twitter"></i>
                                 </a>
                             </li>

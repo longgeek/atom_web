@@ -3705,7 +3705,7 @@ p {
   .main-slider .slides .bg-slider,
   .bg-marketing,
   .swiper-slider-hero .swiper-container .swiper-slide {
-    padding: 150px 0;
+    padding: 100px 0;
     height: auto;
   }
 }
@@ -3848,7 +3848,7 @@ p {
   height: 40px;
   top: 80px;
   left: 80%;
-//  background: url("../images/process.png") center center no-repeat;
+  background: url("~@/assets/images/process.png") center center no-repeat;
   z-index: 1;
 }
 

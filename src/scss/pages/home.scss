@@ -8,3 +8,9 @@
 .vue-typer .custom.idle, .vue-typer .custom.typing {
     background-color: $primary;
 }
+
+@media (max-width: 767px) {
+    .index-typer {
+        height: 86px;
+    }
+}

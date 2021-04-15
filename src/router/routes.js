@@ -27,12 +27,17 @@ const routes = [
     {
         path: '/event',
         name: 'event',
-        component: () => import('@/views/event')
+        component: () => import('@/views/event/event')
     },
     {
         path: '/event/detail:id?',
         name: 'event-detail',
-        component: () => import('@/views/event-detail.vue')
+        component: () => import('@/views/event/detail.vue')
+    },
+    {
+        path: '/event/column:id?',
+        name: 'event-column',
+        component: () => import('@/views/event/column/column.vue')
     },
     {
         path: '/partner',

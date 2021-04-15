@@ -28,16 +28,6 @@ export default {
                                 <span class="text-dark">更新于 :</span> 2020 年 7 月 31 日
                             </li>
                         </ul>
-                        <div class="page-next">
-                            <nav aria-label="breadcrumb" class="d-inline-block">
-                                <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                    <li class="breadcrumb-item">
-                                        <router-link to="/">首页</router-link>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">使用条款</li>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                 </div>
                 <!--end col-->

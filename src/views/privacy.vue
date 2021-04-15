@@ -24,16 +24,6 @@ export default {
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
                         <h4 class="title">隐私政策</h4>
-                        <div class="page-next">
-                            <nav aria-label="breadcrumb" class="d-inline-block">
-                                <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                    <li class="breadcrumb-item">
-                                        <router-link to="/">首页</router-link>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">隐私政策</li>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                 </div>
                 <!--end col-->

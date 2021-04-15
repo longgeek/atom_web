@@ -42,6 +42,11 @@ export default {
                 this.projects = rsp.data.data.records;
             }
         })
+    },
+    method: {
+        aaa() {
+            console.log('---');
+        }
     }
 };
 </script>
@@ -52,7 +57,7 @@ export default {
         <section class="bg-half-170 border-bottom d-table w-100 home-wrapper overflow-hidden">
             <div class="container">
                 <div class="row position-relative" style="z-index: 1">
-                    <div class="col-md-7 col-12 mt-lg-5">
+                    <div class="col-md-6 col-12">
                         <div class="title-heading">
                             <carousel
                                 v-if="news.length"
@@ -74,24 +79,22 @@ export default {
                                     </router-link>
                                 </Slide>
                             </carousel>
-                            <h1 class="heading title-dark mb-4">
-                                一切为了<span class="element text-primary">
+                            <h2 class="title-dark mb-4">
+                                开放原子开源基金会
+                                <h4 class="mt-2 index-typer">
                                     <vue-typer
                                         :text="[
-                                            '开发者',
-                                            '全世界',
+                                            '致力于推动全球开源产业发展的非营利机构',
                                         ]"
                                     ></vue-typer>
-                                </span>
-                                <br />
-                                <h3>All for the developer, all for the universe</h3>
-                            </h1>
-                            <p class="para-desc text-muted">
-                                我们的愿景，成为国际一流的开源基金会<br />
-                                我们的价值观，追求卓越，开放透明，务实奉献
+                                </h4>
+                            </h2>
+                            <p class="text-muted">
+                            由华为、腾讯、阿里、百度、浪潮、360、招商银行等<br />十家龙头科技企业联合发起，
+                            由工信部作为业务指导单位。
                             </p>
-                            <div class="mt-4 pt-2 mb-4 pb-2">
-                                <a :href="$vars.registerUrl" class="btn btn-outline-primary rounded">
+                            <div class="mt-4 pt-2">
+                                <a :href="$vars.registerUrl" class="btn btn-primary rounded">
                                     <i class="mdi mdi-google-my-business mr-2"></i>
                                     现在，加入我们
                                 </a>
@@ -100,43 +103,11 @@ export default {
                     </div>
                     <!--end col-->
 
-                    <div class="col-md-5 col-12 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                        <div class="shape-before">
-                            <div class="carousel-cell">
-                                <img
-                                    src="@/assets/images/index.png"
-                                    class="img-fluid rounded-md"
-                                    alt=""
-                                />
-                                <div class="play-icon">
-                                    <a
-                                        href="javascript: void(0);"
-                                        v-b-modal.modal-1
-                                        class="play-btn video-play-icon"
-                                    >
-                                        <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
-                                    </a>
-                                    <b-modal
-                                        id="modal-1"
-                                        hide-footer
-                                        size="lg"
-                                        header-close-variant="white"
-                                        header-class="border-0"
-                                        content-class="border-0"
-                                        centered
-                                    >
-                                        <b-embed
-                                            type="iframe"
-                                            aspect="16by9"
-                                            src="videos/intro.mp4"
-                                            allowfullscreen
-                                        ></b-embed>
-                                    </b-modal>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-12 mt-5">
+                        <video controls loop autoplay class="img-fluid rounded-md shadow border" width="100%">
+                            <source src="videos/intro.mp4" type="video/mp4">
+                        </video>
                     </div>
-                    <!--end col-->
                 </div>
                 <!--end row-->
             </div>
@@ -181,8 +152,7 @@ export default {
 
                 <br />
                 <br />
-                <br />
-                <div class="col-lg-12 text-center col-md-4 mt-4 pt-2">
+                <div class="col-lg-12 text-center col-md-4 mt-3">
                     <router-link :to="{name: 'project'}" class="btn btn-primary">
                         查看更多 <arrow-right-icon class="fea icon-sm"></arrow-right-icon>
                     </router-link>
@@ -190,8 +160,10 @@ export default {
                 <!--end col-->
             </div>
             <!--end container-->
+        </section>
 
-            <div class="container mt-100 mt-60">
+        <section class="section border-bottom">
+            <div class="container">
                 <div class="row rounded bg-primary p-lg-5 p-4">
                     <div class="col-lg-6">
                         <div class="section-title text-center text-lg-left">
@@ -209,65 +181,70 @@ export default {
                     <div class="col-lg-6">
                         <div class="row" id="counter">
                             <div class="col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
-                                <div class="content text-center">
-                                    <h1 class="mb-0 text-success">
-                                        <countTo
-                                            :startVal="1"
-                                            :duration="8000"
-                                            :endVal="8"
-                                        ></countTo
-                                        >+
-                                    </h1>
-                                    <ul class="list-unstyled mb-0 h5">
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-heart text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-heart text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-heart text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-heart text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-heart text-white"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="text-white-50">捐赠项目</span>
-                                </div>
+                                <router-link to="/project">
+                                    <div class="content text-center pointer">
+                                        <h1 class="mb-0 text-success">
+                                            <countTo
+                                                :startVal="1"
+                                                :duration="8000"
+                                                :endVal="8"
+                                            ></countTo
+                                            >+
+                                        </h1>
+                                        <ul class="list-unstyled mb-0 h5">
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-heart text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-heart text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-heart text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-heart text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-heart text-white"></i>
+                                            </li>
+                                        </ul>
+                                        <span class="text-white-50">捐赠项目</span>
+                                    </div>
+                                </router-link>
                             </div>
 
                             <div class="col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
-                                <div class="content text-center">
-                                    <h1 class="mb-0 text-success">
-                                        <countTo
-                                            :startVal="1"
-                                            :duration="4000"
-                                            :endVal="100"
-                                        ></countTo
-                                        >+
-                                    </h1>
-                                    <ul class="list-unstyled mb-0 h5">
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-star text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-star text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-star text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-star text-white"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="mdi mdi-star text-white"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="text-white-50">合作单位</span>
-                                </div>
+                                <router-link to="/partner">
+                                    <div class="content text-center pointer">
+                                        <h1 class="mb-0 text-success">
+                                            <countTo
+                                                :startVal="1"
+                                                :duration="8000"
+                                                :endVal="100"
+                                                :easingFn="aaa"
+                                            ></countTo
+                                            >+
+                                        </h1>
+                                        <ul class="list-unstyled mb-0 h5">
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-star text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-star text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-star text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-star text-white"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="mdi mdi-star text-white"></i>
+                                            </li>
+                                        </ul>
+                                        <span class="text-white-50">合作单位</span>
+                                    </div>
+                                </router-link>
                             </div>
                         </div>
                     </div>

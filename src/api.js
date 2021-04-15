@@ -18,6 +18,9 @@ const api = {
         list:                       ()              => { return url + '/client/richtext/listRichText' },
         detail:                     ()              => { return url + '/client/richtext/getRichTextDetail' },
     },
+    members: {
+        list:                       ()              => { return url + '/client/members/list' },
+    },
 }
 
 export default api;

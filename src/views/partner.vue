@@ -45,16 +45,6 @@ export default {
                     <div class="col-lg-12 text-center">
                         <div class="page-next-level">
                             <h4 class="title">合作者关系</h4>
-                            <div class="page-next">
-                                <nav aria-label="breadcrumb" class="d-inline-block">
-                                    <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                        <li class="breadcrumb-item">
-                                            <router-link to="/">首页</router-link>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">合作者关系</li>
-                                    </ul>
-                                </nav>
-                            </div>
                         </div>
                     </div>
                     <!--end col-->
@@ -350,57 +340,6 @@ export default {
                                                 <li class="mb-0">
                                                     <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
                                                     <div style="margin-left: 30px; margin-top: -22px;">注册成为开源基金会的开发者，加入到具体的开源项目或工作组中，参与贡献。</div>
-                                                </li>
-                                            </ul>
-                                        </b-card-body>
-                                    </b-collapse>
-                                </b-card>
-                                <b-card no-body class="mb-2 border-bottom rounded">
-                                    <b-card-header class="border-0 bg-light p-3 pr-5">
-                                        <a class="faq position-relative text-dark" v-b-toggle.accordion-3 href="javascript: void(0);">
-                                            <h6 class="title mb-0">
-                                                所有的捐赠人有何<span class="text-primary"> 公共权益</span>？
-                                            </h6>
-                                        </a>
-                                    </b-card-header>
-                                    <b-collapse id="accordion-3" visible accordion="my-accordion" role="tabpanel">
-                                        <b-card-body class="px-2 py-4">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-0">
-                                                    <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
-                                                    <div style="margin-left: 30px; margin-top: -22px;">
-                                                        经基金会书面授权许可，可以根据基金会的商标和标识使用规范公开使用基金会的商标及标识（<a href="//con.openatom.cn/static/docs/开放原子开源基金会VI手册V2.0.pdf" target="_blank">开放原子开源基金会VI手册</a>）；
-                                                    </div>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
-                                                    <div style="margin-left: 30px; margin-top: -22px;">
-                                                        按照其各自级别，可以分别以基金会白金、金牌、银牌、一般捐赠人名义被公开宣传、报道，具体以所签署的捐赠协议为准；
-                                                    </div>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
-                                                    <div style="margin-left: 30px; margin-top: -22px;">
-                                                        可以优先接受基金会技术、法务、项目等各专业委员会的指导、支撑；
-                                                    </div>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
-                                                    <div style="margin-left: 30px; margin-top: -22px;">
-                                                        可以优先参与基金会承办的开源领域的培训、学习活动，通过相关资格认证之后还可以取得相应资质；
-                                                    </div>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
-                                                    <div style="margin-left: 30px; margin-top: -22px;">
-                                                        可以受邀出席基金会组织国际、国内开源文化、技术、学术、法律领域等交流活动；
-                                                    </div>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <span class="text-primary h5 mr-2"><i class="uil uil-check-circle align-middle"></i></span>
-                                                    <div style="margin-left: 30px; margin-top: -22px;">
-                                                        符合基金会的白金、金牌、银牌、一般捐赠人、特殊贡献人资质条件并履行相关义务后，可以对基金会所有项目提供资金赞助。
-                                                    </div>
                                                 </li>
                                             </ul>
                                         </b-card-body>

@@ -27,29 +27,41 @@ export default {
 <div>
     <!-- Hero Start -->
     <section class="bg-half bg-light d-table w-100">
+        <div class="animation-flying-icon-1">
+            <i class="mdi mdi-account-multiple text-primary effect-icon"></i>
+        </div>
+        <div class="animation-flying-icon-2">
+            <i class="mdi mdi-speaker-wireless text-warning effect-icon"></i>
+        </div>
+        <div class="animation-flying-icon-3">
+            <i class="mdi mdi-volume-source text-info effect-icon"></i>
+        </div>
+        <div class="animation-flying-icon-4">
+            <i class="mdi mdi-wallet-giftcard text-danger effect-icon"></i>
+        </div>
+        <div class="animation-flying-icon-5">
+            <i class="mdi mdi-human-greeting text-primary effect-icon"></i>
+        </div>
+        <div class="animation-flying-icon-6">
+            <i class="mdi mdi-calendar-month-outline text-danger effect-icon"></i>
+        </div>
+        <div class="animation-flying-icon-7">
+            <i class="mdi mdi-teach text-info effect-icon"></i>
+        </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
                         <h5 class="title mt-4 mb-3"> {{ event.title }} </h5>
-                        <ul class="list-unstyled">
-                            <li class="list-inline-item text-primary mr-3">
-                                <i class="mdi mdi-map-marker text-warning mr-2"></i>{{ event.hostCity }}
+                        <p class="text-muted para-desc mx-auto">{{ event.intro }}</p>
+                        <ul class="list-unstyled text-warning">
+                            <li class="list-inline-item mr-3">
+                                <i class="mdi mdi-map-marker mr-2"></i>{{ event.hostCity }}
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <i class="mdi mdi-calendar-clock mr-2"></i>{{ event.conveneTime.split(' ')[0] }}
                             </li>
                         </ul>
-                        <div class="page-next">
-                            <nav aria-label="breadcrumb" class="d-inline-block">
-                                <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                    <li class="breadcrumb-item">
-                                        <router-link to="/">首页</router-link>
-                                    </li>
-                                    <li class="breadcrumb-item">
-                                        <router-link to="/event">社区活动</router-link>
-                                    </li>
-                                    <li class="breadcrumb-item active" aria-current="page">活动详情</li>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                 </div>
                 <!--end col-->
@@ -76,11 +88,7 @@ export default {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-7 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <p class="text-muted">活动时间：{{ event.conveneTime }}</p>
-                    <div class="bg-light rounded p-4">
-                        <p class="text-muted font-italic mb-0">{{ event.intro }}</p>
-                    </div>
-                    <img :src="event.cover" alt="" class="img-fluid rounded-md shadow mb-5 mt-5">
+                    <img :src="event.cover" alt="" class="img-fluid rounded-md shadow mb-5">
                     <div class="event-detail" v-html="$options.filters.toMarkDown(event.content)"></div>
                 </div>
                 <!--end col-->
