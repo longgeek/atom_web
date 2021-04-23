@@ -1,5 +1,6 @@
 import {
     ArrowUpIcon,
+    ArrowDownIcon,
     FacebookIcon,
     InstagramIcon,
     TwitterIcon,
@@ -10,6 +11,10 @@ import {
     Carousel,
     Slide
 } from 'vue-carousel';
+
+import Navbar from "@/components/navbar";
+import Council from "@/components/council";
+import { VueTyper } from "vue-typer";
 
 /**
  * Index-event component
@@ -25,17 +30,38 @@ export default {
             hours: "",
             seconds: "",
             endtime: "2021.10.15 09:00:00",
+            partner: [
+                'AlibabaGroup.svg',
+                'Baidu.svg',
+                'HUAWEI.svg',
+                'JointForce.svg',
+                'Inspur.svg',
+                'HYPERCHAIN.svg',
+                '360.svg',
+                'Tencent.svg',
+                'CMB.svg',
+                'PATEO.svg',
+                'CSG.svg',
+                'OSCHINA.svg',
+                'ECARX.svg',
+                'Geekbang.svg',
+                'HIT_SZ.svg'
+            ],
         }
     },
     components: {
         Carousel,
         Slide,
         ArrowUpIcon,
+        ArrowDownIcon,
         FacebookIcon,
         InstagramIcon,
         TwitterIcon,
         LinkedinIcon,
-        PlayIcon
+        PlayIcon,
+        Navbar,
+        Council,
+        "vue-typer": VueTyper,
     },
     mounted() {
         this.start = new Date().getTime();

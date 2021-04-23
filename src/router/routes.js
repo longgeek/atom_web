@@ -40,6 +40,11 @@ const routes = [
         component: () => import('@/views/event/column/column.vue')
     },
     {
+        path: '/event/column/topic:id?',
+        name: 'event-column-topic',
+        component: () => import('@/views/event/column/topic/topic.vue')
+    },
+    {
         path: '/partner',
         name: 'partner',
         component: () => import('@/views/partner')
@@ -67,8 +72,24 @@ const routes = [
     {
         path: '/settings',
         name: 'settings',
-        meta: { authRequired: true },
-        component: () => import('@/views/settings')
+        meta: { authRequired: false },
+        component: () => import('@/views/settings/settings.vue')
+    },
+    {
+        path: '/profile',
+        redirect: '/profile/topic',
+    },
+    {
+        path: '/profile/topic',
+        name: 'profile-topic',
+        meta: { authRequired: false },
+        component: () => import('@/views/profile/topic/topic.vue')
+    },
+    {
+        path: '/profile/topic/create',
+        name: 'profile-topic-create',
+        meta: { authRequired: false },
+        component: () => import('@/views/profile/topic/create.vue')
     },
     {
         path: '/logout',

@@ -1,0 +1,234 @@
+<div>
+    <section
+        class="bg-half-170 d-table w-100 border-bottom"
+        style="background: url('images/bg-catpaw.png') center center"
+    >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="section-title mr-lg-4">
+                        <div role="alert" class="alert alert-light alert-pills shadow mb-3">
+                            <span class="badge badge-pill badge-success mr-1">open</span>
+                            截止日期: 2021.04.04
+                        </div>
+                        <h2 class="mb-4">
+                            <i class="uil uil-layer-group text-primary"></i>
+                            开发者大会<span class="text-primary">议题征集中</span>
+                        </h2>
+                        <p class="text-muted mt-2">大会演讲者权益如下，可通过下方表单提交你的议题：</p>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-0"><span class="text-primary h5 mr-2">
+                                <i class="uil uil-check-circle align-middle"></i></span>
+                                演讲人将免费获得本次大会VIP门票
+                            </li>
+                            <li class="mb-0"><span class="text-primary h5 mr-2">
+                                <i class="uil uil-check-circle align-middle"></i></span>
+                                演讲人将获得本次大会文化周边大礼包
+                            </li>
+                            <li class="mb-0"><span class="text-primary h5 mr-2">
+                                <i class="uil uil-check-circle align-middle"></i></span>
+                                演讲人可在本次大会宣传材料及网站上获得个人信息露出
+                            </li>
+                        </ul>
+                        <div class="mt-4 pt-2">
+                            <a href="javascript:void(0)" class="btn btn-pills btn-primary m-1">查看详细规则</a>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-7 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                    <img src="images/event/column/topic.gif" class="img-fluid" alt="" />
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!--end section-->
+
+    <section class="section border-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="mb-4">
+                            大会<span class="text-primary">选题方向</span>
+                        </h4>
+                        <p class="text-muted para-desc mx-auto mb-0">
+                            本次大会覆盖选题方向包括但不局限于：
+                            开源软件在新技术的运用（如：操作系统、区块链、边缘计算、大数据、物联网、安全、人工智能、工业智能化、机器人、脑机接口等）
+                        </p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4 pb-2" v-for="(dir, index) in topicDirection" :key="index">
+                    <div class="media key-feature align-items-center p-3 rounded shadow">
+                        <div class="icon text-center rounded-circle mr-3">
+                            <monitor-icon class="fea icon-ex-md text-primary"></monitor-icon>
+                        </div>
+                        <div class="media-body">
+                            <span class="mb-0">{{ dir.name }}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <section class="section border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <h4 class="mb-4">
+                            大会<span class="text-primary">选题形式</span>
+                        </h4>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-0">
+                                <span class="text-primary h5 mr-2">
+                                    <i class="uil uil-check-circle align-middle"></i>
+                                </span>
+                                单人主题演讲、双人主题演讲：每个选题 20 分钟
+                            </li>
+                            <li class="mb-0">
+                                <span class="text-primary h5 mr-2">
+                                    <i class="uil uil-check-circle align-middle"></i>
+                                </span>
+                                小组专题讨论：3-5 名发言人，共 30 分钟
+                            </Li>
+                        </ul>
+                        </ul>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-6">
+                    <div class="row ml-lg-5" id="counter">
+                        <div class="box-shadow-after"></div>
+                        <div class="col-md-6 col-12">
+                            <div class="row">
+                                <div class="col-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                                    <div class="card counter-box border-0 bg-light shadow text-center rounded">
+                                        <div class="card-body py-5">
+                                            <h2 class="mb-0">
+                                                <countTo
+                                                    :startVal="1"
+                                                    :endVal="20"
+                                                    :duration="4000"
+                                                ></countTo
+                                                > <span class="h6">分钟</span>
+                                            </h2>
+                                            <h6 class="counter-head mb-0">单人主题演讲</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-12 mt-4 pt-2">
+                                    <div class="card counter-box border-0 bg-primary shadow text-center rounded">
+                                        <div class="card-body py-5">
+                                            <h2 class="text-light title-dark mb-0">
+                                                <countTo :startVal="1" :endVal="3" :duration="4000"></countTo>
+                                                &nbsp;-&nbsp;
+                                                <countTo :startVal="1" :endVal="5" :duration="4000"></countTo>
+                                                <span class="h6">&nbsp;人</span>
+                                            </h2>
+                                            <h6 class="counter-head mb-0 title-dark text-light">
+                                                小组专题讨论
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end Row-->
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-md-6 col-12">
+                            <div class="row pt-lg-4 mt-lg-4">
+                                <div class="col-12 mt-4 pt-2">
+                                    <div class="card counter-box border-0 bg-success shadow text-center rounded">
+                                        <div class="card-body py-5">
+                                            <h2 class="text-light title-dark mb-0">
+                                                <countTo :startVal="1" :endVal="30" :duration="4000"></countTo>
+                                                <span class="h6">&nbsp;分钟</span>
+                                            </h2>
+                                            <h6 class="counter-head mb-0 title-dark text-light">
+                                                小组专题讨论
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-12 mt-4 pt-2">
+                                    <div class="card counter-box border-0 bg-light shadow text-center rounded">
+                                        <div class="card-body py-5">
+                                            <h2 class="mb-0">
+                                                <countTo :startVal="3" :endVal="20" :duration="4000"></countTo>
+                                                <span class="h6">&nbsp;分钟</span>
+                                            </h2>
+                                            <h6 class="counter-head mb-0">双人主题演讲</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end Row-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end Row-->
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!--end section-->
+
+
+    <section class="section border-bottom bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="mb-4">
+                            <span class="text-primary">提交个人议题</span>
+                        </h4>
+                        <p class="text-muted para-desc mx-auto mb-0">
+                            提交议题后，将会通过议题评审委员会进行评审，评审通过后将会通知呢
+                        </p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-5 col-12">
+                    <img
+                        src="images/event/column/submit.svg"
+                        class="img-fluid mx-auto d-block"
+                        alt=""
+                    />
+                </div>
+                <!--end col-->
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-6 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <topic-form />
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+</div>

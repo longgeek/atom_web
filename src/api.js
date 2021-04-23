@@ -21,6 +21,11 @@ const api = {
     members: {
         list:                       ()              => { return url + '/client/members/list' },
     },
+    column: {
+        topic:                      ()              => { return url + '/atom_services/column/topic' },
+        topic_type:                 (id)            => { return url + '/atom_services/column/topic/type/' + id },
+        detail:                     (id)            => { return url + '/atom_services/column/' + id },
+    }
 }
 
 export default api;

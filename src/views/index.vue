@@ -103,7 +103,7 @@ export default {
                     </div>
                     <!--end col-->
 
-                    <div class="col-md-6 col-12 mt-5">
+                    <div class="col-md-6 col-12 mt-3">
                         <video controls loop autoplay class="img-fluid rounded-md shadow border" width="100%">
                             <source src="videos/intro.mp4" type="video/mp4">
                         </video>
@@ -116,7 +116,7 @@ export default {
         <!-- Start End -->
 
         <!-- 孵化项目 Start -->
-        <section class="section border-bottom">
+        <section class="section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
@@ -162,7 +162,7 @@ export default {
             <!--end container-->
         </section>
 
-        <section class="section border-bottom">
+        <section class="section p-0">
             <div class="container">
                 <div class="row rounded bg-primary p-lg-5 p-4">
                     <div class="col-lg-6">
@@ -301,7 +301,7 @@ export default {
                                                     <i class="uil uil-shield-check"></i>
                                                 </span>
                                                 <h6 class="mt-3 title">商标保护</h6>
-                                                <p class="text-muted mb-0">保护开放原子（OPENATOM）等商标品牌适用于相关的开源项目，免遭其他组织滥用。同时针对捐赠项目提供版权许可和执行、合规审查等服务</p>
+                                                <p class="text-muted mb-0">保护开放原子（OPENATOM）等商标品牌适用于相关的开源项目，免遭其他组织滥用。同时针对捐赠项目提供版权许可和执行、合规审查等服务。</p>
                                             </div>
                                         </div>
                                     </div>

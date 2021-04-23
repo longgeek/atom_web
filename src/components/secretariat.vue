@@ -4,12 +4,78 @@ export default {
         secretariatData: {
             type: Array,
             default: [
-                // {
-                //     name: "高素梅",
-                //     title: "监事",
-                //     photo: "images/secretariat/监事-高素梅.png",
-                //     content: "",
-                // },
+                {
+                    name: "杜玉杰",
+                    title: "秘书长",
+                    photo: "images/council/理事-杜玉杰.png",
+                    content: "",
+                },
+                {
+                    name: "侯正鹏",
+                    title: "业务发展部",
+                    photo: "images/secretariat/业务发展部-侯正鹏.png",
+                    content: "",
+                },
+                {
+                    name: "侯燕",
+                    title: "运营部",
+                    photo: "images/secretariat/运营部-侯燕.png",
+                    content: "",
+                },
+                {
+                    name: "钟以山",
+                    title: "品牌与营销部",
+                    photo: "images/secretariat/品牌与营销部-钟以山.png",
+                    content: "",
+                },
+                {
+                    name: "腾召智",
+                    title: "研发部",
+                    photo: "images/secretariat/研发部-腾召智.png",
+                    content: "",
+                },
+                {
+                    name: "王荷舒",
+                    title: "法务部",
+                    photo: "images/secretariat/法务部-王荷舒.png",
+                    content: "",
+                },
+                {
+                    name: "万惠",
+                    title: "公共事业部",
+                    photo: "images/secretariat/公共事业部-万惠.png",
+                    content: "",
+                },
+                {
+                    name: "王冠",
+                    title: "教育培训部",
+                    photo: "images/secretariat/教育培训部-王冠.png",
+                    content: "",
+                },
+                {
+                    name: "王菲",
+                    title: "人力资源部",
+                    photo: "images/secretariat/人力资源部-王菲.png",
+                    content: "",
+                },
+                {
+                    name: "李双莹",
+                    title: "投资管理部",
+                    photo: "images/secretariat/投资管理部-李双莹.png",
+                    content: "",
+                },
+                {
+                    name: "刘跃峰",
+                    title: "采购部",
+                    photo: "images/secretariat/采购部-刘跃峰.png",
+                    content: "",
+                },
+                {
+                    name: "金海龙",
+                    title: "财务部",
+                    photo: "images/secretariat/财务部-金海龙.png",
+                    content: "",
+                },
             ],
         },
     },
@@ -29,7 +95,7 @@ export default {
             :key="index"
         >
             <a v-b-modal.secretariat_modal @click="current = secretariat">
-                <div class="card team text-center border-0">
+                <div class="card team text-center border-0 bg-transparent">
                     <div class="position-relative">
                         <img
                             :src="`${secretariat.photo}`"

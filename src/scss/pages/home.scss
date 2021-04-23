@@ -9,6 +9,19 @@
     background-color: $primary;
 }
 
+.vue-typer.text-white {
+    .custom.char.typed {
+        color: #fff;
+    }
+    .custom.char.selected {
+        color: $primary;
+        background-color: #fff;
+    }
+    .custom.idle, .vue-typer .custom.typing {
+        background-color: #fff;
+    }
+}
+
 @media (max-width: 767px) {
     .index-typer {
         height: 86px;

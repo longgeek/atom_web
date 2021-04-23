@@ -22,7 +22,6 @@ export default {
         ).then((rsp) => {
             if (rsp.data.code === 200) {
                 this.projects = rsp.data.data.records;
-                console.log(this.projects);
             }
         })
     }

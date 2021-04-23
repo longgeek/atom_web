@@ -123,25 +123,34 @@ export default {
                     <router-link class="logo" to="/" v-else>
                         <img src="@/assets/images/logo-dark.svg" class="l-dark" height="55" alt="" />
                         <img
-                            src="@/assets/images/logo-light.png"
+                            src="@/assets/images/logo-light.svg"
                             class="l-light"
-                            height="40"
+                            height="55"
                             alt=""
                         />
                     </router-link>
                 </div>
-                <div class="buy-button" v-if="Object.keys(user).length === 0">
+                <div class="auth-button" v-if="Object.keys(user).length === 0">
                     <a
                         :href="$vars.loginUrl"
+                        class="btn mr-2"
+                        :class="{
+                            'btn-light': navLight === true,
+                            'btn-outline-primary': navLight !== true,
+                        }"
+                        >登录</a
+                    >
+                    <a
+                        :href="$vars.registerUrl"
                         class="btn"
                         :class="{
                             'btn-light': navLight === true,
                             'btn-primary': navLight !== true,
                         }"
-                        >登录</a
+                        >注册</a
                     >
                 </div>
-                <ul class="buy-button list-inline mb-0" v-else>
+                <ul class="auth-button list-inline mb-0" v-else>
                     <li class="list-inline-item mb-0">
                         <b-dropdown
                             class="btn-group mr-2"
@@ -156,7 +165,8 @@ export default {
                                 />
                                 <span class="ml-2">{{ user.nickname }}</span>
                             </template>
-                            <b-dropdown-item to="/settings">个人信息</b-dropdown-item>
+                            <b-dropdown-item to="/profile">个人主页</b-dropdown-item>
+                            <b-dropdown-item to="/settings">账号设置</b-dropdown-item>
                             <b-dropdown-divider></b-dropdown-divider>
                             <b-dropdown-item to="/logout">退出登录</b-dropdown-item>
                         </b-dropdown>
@@ -203,7 +213,8 @@ export default {
                         <li :class="{
                             active: $route.name == 'event' ||
                                     $route.name == 'event-detail' ||
-                                    $route.name == 'event-column'
+                                    $route.name == 'event-column' ||
+                                    $route.name == 'event-column-topic'
                         }">
                             <router-link to="/event" class="side-nav-link-ref">社区活动</router-link>
                         </li>
@@ -212,8 +223,37 @@ export default {
                         </li>
                     </ul>
                     <!--end navigation menu-->
-                    <div class="buy-menu-btn d-none">
-                        <a :href="$vars.loginUrl" class="btn btn-primary">登录</a>
+                    <div v-if="Object.keys(user).length === 0">
+                        <div class="auth-menu-btn d-none">
+                            <a :href="$vars.loginUrl" class="btn btn-outline-primary">登录</a>
+                        </div>
+                        <div class="auth-menu-btn d-none mb-4">
+                            <a :href="$vars.registerUrl" class="btn btn-primary">注册</a>
+                        </div>
+                    </div>
+                    <div class="auth-menu-btn d-none" v-else>
+                        <ul class="buy-menu-button list-inline">
+                            <li class="list-inline-item mb-0">
+                                <b-dropdown
+                                    class="btn-group mr-2"
+                                    variant="soft-primary"
+                                >
+                                    <template #button-content>
+                                        <v-gravatar :email="user.email"
+                                            alt="Nobody"
+                                            default-img="robohash"
+                                            :hostname="$gravatar_host"
+                                            class="rounded-circle avatar avatar-ex-sm mx-auto"
+                                        />
+                                        <span class="ml-2">{{ user.nickname }}</span>
+                                    </template>
+                                    <b-dropdown-item to="/profile">个人主页</b-dropdown-item>
+                                    <b-dropdown-item to="/settings">账号设置</b-dropdown-item>
+                                    <b-dropdown-divider></b-dropdown-divider>
+                                    <b-dropdown-item to="/logout">退出登录</b-dropdown-item>
+                                </b-dropdown>
+                            </li>
+                        </ul>
                     </div>
                     <!--end login button-->
                 </div>

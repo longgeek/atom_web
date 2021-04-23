@@ -6,7 +6,7 @@
     export default {
         data() {
             return {
-                doNotShowNavbar: ['error'],
+                doNotShowNavbar: ['error', 'event-column'],
             }
         },
         components: {

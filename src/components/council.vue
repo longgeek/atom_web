@@ -95,7 +95,7 @@ export default {
             :key="index"
         >
             <a v-b-modal.council_modal @click="current = council">
-                <div class="card team text-center border-0">
+                <div class="card team text-center border-0 bg-transparent">
                     <div class="position-relative">
                         <img
                             :src="`${council.photo}`"

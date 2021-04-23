@@ -28,7 +28,7 @@ export default {
                 <div class="row">
                     <div class="col-lg-5 col-12 mb-0 pb-0 pb-md-2">
                         <a href="/" class="logo-footer">
-                            <img src="@/assets/images/logo-light.png" height="40" alt="" />
+                            <img src="@/assets/images/logo-light.svg" height="55" alt="" />
                         </a>
                         <p class="mt-4">
                             开放原子开源基金会拟通过共建、共治、共享的方式，系统性打造信息产业和工业开源开放框架，搭建国际开源社区，提升行业协作效率，赋能千行百业。目前开放原子开源基金会业务范围主要包括为各类开源软件、开源硬件、开源芯片、开源内容提供中立的知识产权托管、战略咨询、法务咨询、项目运营、品牌营销和教育培训等服务。

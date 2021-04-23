@@ -37,25 +37,36 @@ module.exports = {
         contentBase:path.join(__dirname, 'public'),
         proxy: {
             "/client": {
-                target: "http://test.openatom.cn",
+                // target: "http://test.openatom.cn",
+                target: "http://192.168.1.141:3000",
                 changeOrigin: true,
-                ws:true,
-                // pathRewrite: {
-                //     "^/client": "/atom_services/openatom_client"
-                // }
+                ws: true,
+                secure: false,
+                pathRewrite: {
+                    "^/client": "/atom_services/openatom_client"
+                }
             },
             "/uploads": {
-                target: "http://test.openatom.cn",
+                // target: "http://test.openatom.cn",
+                target: "http://192.168.1.141:3000",
                 changeOrigin: true,
-                ws:true,
-                // pathRewrite: {
-                //     "^/client": "/atom_services/openatom_client"
-                // }
+                ws: true,
+                pathRewrite: {
+                    "^/client": "/atom_services/openatom_client"
+                }
             },
             "/atomavatar": {
-                target: "http://test.openatom.cn",
+                target: "http://192.168.1.141:8080",
                 changeOrigin: true,
-                ws:true,
+                ws: true,
+                pathRewrite: {
+                    "^/atomavatar": "/"
+                }
+            },
+            "/atom_services": {
+                target: "http://192.168.1.141:3000",
+                changeOrigin: true,
+                ws: true,
             },
         }
     },

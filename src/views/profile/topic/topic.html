@@ -1,0 +1,55 @@
+<div>
+    <section class="section">
+        <ProfileHeader />
+        <div class="container">
+            <div class="row mt-4">
+                <ProfileLeft />
+                <div class="col-lg-9 col-md-9 col-12 mt-5 pt-2 mt-sm-0 pt-sm-0">
+                    {{ $route.params.type }}
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- div class="mb-4">
+                                <button class="btn btn-primary">提交新的议题</button>
+                            </div -->
+                            <div class="alert alert-outline-primary alert-pills" role="alert">
+                                <span class="badge badge-pill badge-success"> Open </span>
+                                <span class="alert-content">
+                                开发者大会正在征集议题中，<a href="javascript:void(0)" class="alert-link">点击此处去了解</a>。
+                                </span>
+                            </div>
+                            <p class="text-muted" v-if="!topics.length">
+                                未找到提交议题记录。
+                            </p>
+                            <div class="table-responsive bg-white shadow rounded" v-else>
+                                <table class="table mb-0 table-center">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="text-muted">#</th>
+                                      <th scope="col">议题</th>
+                                      <th scope="col">议题内容</th>
+                                      <th scope="col">状态</th>
+                                      <th scope="col">提交时间</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr v-for="(topic, index) in topics" :keys="index">
+                                      <th class="text-muted">{{ index + 1 }}</th>
+                                      <th class="text-primary" width="20%">{{ topic.columnTitle }}</th>
+                                      <td class="text-muted">{{ topic.topicContent }}</td>
+                                      <td class="text-success" width="10%">{{ topic.topicProgress }}</td>
+                                      <td class="text-muted" width="20%">2020.01.01 18:59:00</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!--end section-->
+</div>

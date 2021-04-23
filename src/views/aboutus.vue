@@ -31,7 +31,6 @@ export default {
             .then((rsp) => {
                 if (rsp.data.code === 200) {
                     this.tocData = rsp.data.data.rows;
-                    console.log(this.tocData);
                 }
             })
     }

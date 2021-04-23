@@ -34,6 +34,9 @@ Vue.prototype.$gravatar_host = 'gravatar.zeruns.tech';
 import animated from 'animate.css';
 Vue.use(animated);
 
+import Vuelidate from 'vuelidate';
+Vue.use(Vuelidate);
+
 Vue.use(VueScrollTo, {
     duration: 3000,
     easing: "ease"

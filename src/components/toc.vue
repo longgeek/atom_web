@@ -22,7 +22,7 @@ export default {
             :key="index"
         >
             <a v-b-modal.toc_modal @click="current = toc">
-            <div class="card team text-center border-0">
+            <div class="card team text-center border-0 bg-transparent">
                 <div class="position-relative">
                     <img
                         :src="`${toc.photo}`"

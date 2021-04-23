@@ -1,0 +1,39 @@
+.secondary-nav {
+    z-index: 2;
+    margin-top: -30px;
+    top: 70px !important;
+
+    .nav {
+        min-height: 58px;
+        .nav-link {
+            padding: 0 20px;
+            display: table-cell;
+            font-size: 13px;
+            color: $text-color;
+            vertical-align: middle;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+            line-height: 58px;
+            .icon {
+                color: $muted;
+                margin-right: 8px;
+            }
+        }
+        .nav-link.active {
+            border-color: $primary;
+            .icon {
+                color: $text-color;
+            }
+        }
+        .nav-link.disabled {
+            opacity: 0.5;
+            cursor: no-drop;
+        }
+        .nav-link:hover {
+            border-color: #ddd;
+        }
+        .nav-link.active:hover {
+            border-color: $primary;
+        }
+    }
+}
