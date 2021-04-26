@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="mt-4 pt-2">
-                        <router-link :to="{name: 'event-column-topic'}">
+                        <router-link :to="{name: 'event-column-topic', query: {id: $route.query.id}}">
                             <a href="javascript:void(0)" class="btn btn-lg btn-primary">
                                 正在征集议题中，立即提交议题
                             </a>
@@ -105,7 +105,7 @@
 
                     <div class="col-md-4 mt-4 mt-sm-0">
                         <div class="text-md-right text-center">
-                            <router-link :to="{name: 'event-column-topic'}">
+                            <router-link :to="{name: 'event-column-topic', query: {id: $route.query.id}}">
                                 <a href="javascript:void(0)" class="btn btn-light">立即提交议题</a>
                             </router-link>
                         </div>

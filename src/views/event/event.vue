@@ -110,6 +110,32 @@ export default {
                 </div -->
 
 
+                <div class="col-lg-4 col-md-6 col-12 mb-4 pb-2">
+                    <router-link :to="{name: 'event-column', query: {id: 1}}">
+                        <div class="card blog rounded border-0 shadow overflow-hidden">
+                            <div class="position-relative">
+                                <img src="images/event/column/column-banner.jpg" class="card-img-top" alt="..." />
+                                <div class="overlay bg-dark"></div>
+                            </div>
+                            <div class="position-relative">
+                                <div class="shape overflow-hidden text-white">
+                                    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-body content">
+                                <h6 class="text-dark">开发者大会专栏-入口</h6>
+                                <p class="text-muted mt-3">假数据，记得删除 event.intro | limitTo(110)</p>
+                                <ul class="list-unstyled d-flex justify-content-between border-top mt-3 pt-3 mb-0">
+                                    <li class="text-muted small">event.conveneTime</li>
+                                    <li class="text-muted small">event.hostCity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end card / course-blog-->
+                    </router-link>
+                </div>
                 <div class="col-lg-4 col-md-6 col-12 mb-4 pb-2" v-for="(event, index) in events" :key="index">
                     <router-link :to="{name: 'event-detail', query: {id: event.eventId}}">
                         <div class="card blog rounded border-0 shadow overflow-hidden">
@@ -264,12 +290,3 @@ export default {
     <!--end section-->
 </div>
 </template>
-
-<style>
-    .section-event .card.blog img{
-        height: 190px;
-    }
-    .section-event .card.blog p {
-        height: 130px;
-    }
-</style>

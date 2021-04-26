@@ -11,13 +11,7 @@ export default {
         this.loading = true;
 
         // 获取用户信息
-        this.$http.get(
-            this.$api.users.get(),
-        ).then((rsp) => {
-            if (rsp.data.code === 200) {
-                this.user = rsp.data.data;
-            }
-        })
+        this.user = JSON.parse(localStorage.getItem('user'));
     }
 }
 </script>

@@ -20,6 +20,7 @@ import { VueTyper } from "vue-typer";
  * Index-event component
  */
 export default {
+    page: { title: '专栏详情' },
     data() {
         return {
             start: "",
