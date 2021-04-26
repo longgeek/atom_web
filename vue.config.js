@@ -63,10 +63,13 @@ module.exports = {
                     "^/atomavatar": "/"
                 }
             },
-            "/atom_services": {
+            "/atom_column": {
                 target: "http://192.168.1.141:3000",
                 changeOrigin: true,
                 ws: true,
+                pathRewrite: {
+                    "^/atom_column": "/atom_services"
+                }
             },
         }
     },

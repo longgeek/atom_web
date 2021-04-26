@@ -7,6 +7,7 @@
 
     const data = function() {
         return {
+            user: {},
             loading: false,                     // 控制提交按钮禁用
             errorMsg: '',                       // 当表单有误时前端提醒文字
             experience: '',                     // 开源经历
@@ -44,15 +45,17 @@
          */
         init() {
             // 1. 获取用户信息 - 填充到 step1
-            const user = JSON.parse(localStorage.getItem('user'));
-            this.step1.name = user.nickname;
-            this.step1.job = user.position;
-            this.step1.company = user.enterprise;
+            this.user = JSON.parse(localStorage.getItem('user'));
+            if (!this.user) return;
+
+            this.step1.name = this.user.nickname;
+            this.step1.job = this.user.position;
+            this.step1.company = this.user.enterprise;
 
             // 2. 获取用户演讲经历、开源贡献 - 填充到 step1
-            this.experience = user.experience;
-            this.step1.keynote_experience = user.experience.opKeynoteExperience;
-            this.step1.contribution = user.experience.opContribution;
+            this.experience = this.user.experience;
+            this.step1.keynote_experience = this.user.experience.opKeynoteExperience;
+            this.step1.contribution = this.user.experience.opContribution;
 
             if (!this.topic) return;
 
@@ -79,7 +82,13 @@
          * 表单点击下一步触发的事件
          */
         nextEvent(props) {
-            if (props.activeTabIndex == 0) this.submitStep1(props);
+            if (props.activeTabIndex == 0) {
+                if (this.user) {
+                    this.submitStep1(props);
+                    return;
+                }
+                window.location.href = this.$vars.registerUrl;
+            }
             if (props.activeTabIndex == 1) this.submitStep2(props);
             if (props.activeTabIndex == 2) this.$router.push({name: 'profile-topic'});
         },
@@ -263,7 +272,7 @@
                         v-model="step1.name"
                         maxlength="30"
                         placeholder="姓名"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step1.submitted && $v.step1.name.$error)}"
                     />
                 </div>
@@ -273,7 +282,7 @@
                         v-model="step1.job"
                         maxlength="30"
                         placeholder="职位，例如：系统架构师"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step1.submitted && $v.step1.job.$error)}"
                     />
                 </div>
@@ -284,7 +293,7 @@
                         maxlength="30"
                         placeholder="当下所处公司|组织, 例：北京xx科技有限公司"
                         rows="3"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step1.submitted && $v.step1.company.$error)}"
                     />
                 </div>
@@ -295,7 +304,7 @@
                         maxlength="30"
                         placeholder="个人演讲经历，例如：演讲过的大会名称、举办时间、演讲题目等"
                         rows="3"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step1.submitted && $v.step1.keynote_experience.$error)}"
                     >
                     </textarea>
@@ -307,7 +316,7 @@
                         maxlength="30"
                         placeholder="在开源领域的贡献"
                         rows="3"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step1.submitted && $v.step1.contribution.$error)}"
                     >
                     </textarea>
@@ -329,7 +338,7 @@
                             v-model="step2.topic_type"
                             value="1"
                             id="keynote"
-                            :disabled="useType == 'view'"
+                            :disabled="useType == 'view' || !user"
                         />
                         <label class="mb-0" for="personal">主题演讲</label>
                     </label>
@@ -343,7 +352,7 @@
                             v-model="step2.topic_type"
                             value="2"
                             id="panel"
-                            :disabled="useType == 'view'"
+                            :disabled="useType == 'view' || !user"
                         />
                         <label class="mb-0" for="panel">圆桌会议</label>
                     </label>
@@ -355,7 +364,7 @@
                         v-model="step2.title"
                         maxlength="30"
                         placeholder="议题名称"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step2.submitted && $v.step2.title.$error)}"
                     />
                 </div>
@@ -365,7 +374,7 @@
                         placeholder="议题类型"
                         :class="{'is-invalid': (step2.submitted && $v.step2.type.$error)}"
                         v-model="step2.type"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                     >
                         <option value="" selected>"请选择议题类型"</option>
                         <option :value="v.topicTypeId" v-for="(v, k, index) in topicType" :key="index">{{ v.topicTypeName }}</option>
@@ -378,7 +387,7 @@
                         maxlength="30"
                         placeholder="议题内容简介"
                         rows="2"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step2.submitted && $v.step2.intro.$error)}"
                     >
                     </textarea>
@@ -390,7 +399,7 @@
                         maxlength="30"
                         placeholder="议题内容大纲"
                         rows="2"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step2.submitted && $v.step2.catalog.$error)}"
                     >
                     </textarea>
@@ -402,7 +411,7 @@
                         maxlength="30"
                         placeholder="听众收益"
                         rows="2"
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                         :class="{'is-invalid': (step2.submitted && $v.step2.reward.$error)}"
                     >
                     </textarea>
@@ -413,7 +422,7 @@
                         v-model="step2.attach"
                         placeholder="上传 PPT 初稿等材料(可选)"
                         drop-placeholder="Drop file here..."
-                        :disabled="useType == 'view'"
+                        :disabled="useType == 'view' || !user"
                     ></b-form-file>
                 </div>
             </form>
@@ -453,7 +462,10 @@
                     @click.native="nextEvent(props)"
                     class="wizard-footer-right"
                     :style="props.fillButtonStyle"
-                >下一步</wizard-button>
+                >
+                    <span v-if="!user">请登录后提交议题，立即去注册、登录</span>
+                    <span v-else>下一步</span>
+                </wizard-button>
                 <wizard-button
                     v-else
                     @click.native="nextEvent(props)"

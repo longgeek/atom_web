@@ -8,6 +8,7 @@ export default {
     page: { title: '议题征集' },
     data() {
         return {
+            user: '',
             id: '',
             column: '',
             loading: false,
