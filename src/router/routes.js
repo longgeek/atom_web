@@ -86,12 +86,6 @@ const routes = [
         component: () => import('@/views/profile/topic/topic.vue')
     },
     {
-        path: '/profile/topic/create',
-        name: 'profile-topic-create',
-        meta: { authRequired: false },
-        component: () => import('@/views/profile/topic/create.vue')
-    },
-    {
         path: '/logout',
         name: 'logout',
         component: () => import('@/views/logout')

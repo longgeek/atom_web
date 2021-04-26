@@ -90,15 +90,21 @@ export default {
         getLoginStatus() {
             if (!localStorage.getItem('logintoken')) return;
 
+            // 获取用户信息
             this.$http.get(this.$api.users.get())
                 .then((rsp) => {
                     if (rsp.data.code === 200) {
                         this.user = rsp.data.data;
-                        localStorage.setItem('nickname', rsp.data.data.nickname);
-                        localStorage.setItem('phone', rsp.data.data.phone);
-                        localStorage.setItem('roleNames', rsp.data.data.roleNames);
-                        localStorage.setItem('roleTypes', rsp.data.data.roleTypes);
-                        localStorage.setItem('userid', rsp.data.data.userId);
+                        localStorage.setItem('user', JSON.stringify(rsp.data.data));
+                    }
+            })
+
+            // 获取用户开源经历
+            this.$http.get(this.$api.users.experience())
+                .then((rsp) => {
+                    if (rsp.data.code === 200) {
+                        this.user.experience = rsp.data.data;
+                        localStorage.setItem('user', JSON.stringify(this.user));
                     }
             })
         },

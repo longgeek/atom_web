@@ -66,13 +66,12 @@
             </div>
             <!--end row-->
             <div class="row mt-4">
-                <div class="col-lg-4 col-md-6 mb-4 pb-2" v-for="(dir, index) in topicDirection" :key="index">
+                <div class="col-lg-4 col-md-6 mb-4 pb-2" v-for="(type, index) in column.topicType" :key="index">
                     <div class="media key-feature align-items-center p-3 rounded shadow">
                         <div class="icon text-center rounded-circle mr-3">
-                            <monitor-icon class="fea icon-ex-md text-primary"></monitor-icon>
                         </div>
                         <div class="media-body">
-                            <span class="mb-0">{{ dir.name }}</span>
+                            <span class="mb-0">{{ type.topicTypeName }}</span>
                         </div>
                     </div>
                 </div>
@@ -196,7 +195,6 @@
     </section>
     <!--end section-->
 
-
     <section class="section border-bottom bg-light">
         <div class="container">
             <div class="row justify-content-center">
@@ -223,7 +221,11 @@
                 <!--end col-->
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-6 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <topic-form />
+                    <div class="card rounded shadow border-0 ml-lg-5" data-aos="fade-up" data-aos-duration="1400">
+                        <div class="card-body p-4">
+                            <topic-form :columnId="id" :topicType="column.topicType" />
+                        </div>
+                    </div>
                 </div>
                 <!--end col-->
             </div>

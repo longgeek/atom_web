@@ -2006,8 +2006,9 @@ button:not(:disabled) {
 
 .form-control:disabled,
 .form-control[readonly] {
-  background-color: transparent;
-  opacity: 1;
+  background-color: #e7eff7;
+  opacity: 0.8;
+  cursor: no-drop;
 }
 
 .custom-control-input:checked~.custom-control-label:before {
@@ -2093,6 +2094,10 @@ button:not(:disabled) {
 
 .modal-open {
   padding-right: 0 !important;
+}
+
+.modal-title {
+    font-size: 15px !important;
 }
 
 #preloader {

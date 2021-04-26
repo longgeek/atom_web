@@ -1,75 +1,31 @@
 /**
  * 议题征集规则
  */
-import {
-  ArrowUpIcon,
-  HelpCircleIcon,
-  ChevronRightIcon,
-  SmartphoneIcon,
-  MailIcon,
-  ArrowRightIcon
-} from "vue-feather-icons";
-
+import countTo from "vue-count-to";
 import TopicForm from './topic-form.vue';
 
 export default {
     page: { title: '议题征集' },
     data() {
         return {
-            topicDirection: [
-                {
-                    name: "开源硬件",
-                    icon: "",
-                },
-                {
-                    name: "开源内容",
-                    icon: "",
-                },
-                {
-                    name: "开源 DevOps 工具",
-                    icon: "",
-                },
-                {
-                    name: "开源编程语言",
-                    icon: "",
-                },
-                {
-                    name: "开源社区运营及治理",
-                    icon: "",
-                },
-                {
-                    name: "开源法律法规及知识产权",
-                    icon: "",
-                },
-                {
-                    name: "开源教育",
-                    icon: "",
-                },
-                {
-                    name: "开发者心理及生理健康",
-                    icon: "",
-                },
-                {
-                    name: "开发者权益保护",
-                    icon: "",
-                },
-                {
-                    name: "开发者职业发展规划",
-                    icon: "",
-                },
-                {
-                    name: "女性开发者",
-                    icon: "",
-                },
-            ],
+            id: '',
+            column: '',
+            loading: false,
         }
     },
-    components: {
-        HelpCircleIcon,
-        ChevronRightIcon,
-        MailIcon,
-        SmartphoneIcon,
-        ArrowRightIcon,
-        TopicForm,
-    },
+    components: { countTo, TopicForm },
+    created() {
+        // 判断 URL 中是否有 id 参数
+        this.id = this.$route.query['id'];
+        if (!this.id) this.$router.push({ name: 'error' });
+
+        // 根据 URL 参数获取 column detail
+        this.$http.get(this.$api.column.detail(this.id))
+            .then((rsp) => {
+                if (rsp.data.code === 200) {
+                    this.column = rsp.data.data;
+                }
+                this.loading = false;
+            })
+    }
 }

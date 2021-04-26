@@ -5,6 +5,11 @@ const url = process.env.VUE_APP_BASE_URL;
 const api = {
     users: {
         get:                        ()              => { return url + '/client/users/get' },
+        // 修改用户职位、企业
+        edit:                       ()              => { return url + '/client/users' },
+        // 获取用户开源经历
+        experience:                 ()              => { return url + '/client/opensource/experience' },
+        experience_edit:            (id)            => { return url + '/client/opensource/experience/' + id },
     },
     events: {
         qryTypeList:                ()              => { return url + '/client/events/qryTypeList' },
@@ -23,9 +28,12 @@ const api = {
     },
     column: {
         topic:                      ()              => { return url + '/atom_services/column/topic' },
+        topic_edit:                 (id)            => { return url + '/atom_services/column/topic/' + id },
         topic_type:                 (id)            => { return url + '/atom_services/column/topic/type/' + id },
-        detail:                     (id)            => { return url + '/atom_services/column/' + id },
-    }
+        topic_detail:               (id)            => { return url + '/atom_services/column/topic/' + id },
+        topic_remove:               (id)            => { return url + '/atom_services/column/topic/' + id },
+        detail:                     (id)            => { return url + '/atom_services/column/column/' + id },
+    },
 }
 
 export default api;

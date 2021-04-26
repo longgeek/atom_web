@@ -50,7 +50,7 @@ export default {
                     <div class="media align-items-center mb-2">
                         <div class="media-body">
                             <i class="mdi mdi-email mr-3"></i>
-                            <a href="javascript:void(0)" class="text-muted">kristajoseph0203@mail.com</a>
+                            <a href="javascript:void(0)" class="text-muted">{{ user.email }}</a>
                         </div>
                     </div>
                 </div>

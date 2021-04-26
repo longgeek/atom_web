@@ -2,21 +2,22 @@
 @import "_variables.scss";
 
 // 基本样式
-@import "basic/animation.scss";               // Basic 动画
-@import "basic/global.scss";                  // 全局 CSS 样式
-@import "basic/color.scss";                   // 默认颜色
-@import "basic/main-style-light.scss";        // 默认采用 Light 风格
+@import "basic/main.scss";                      // 默认采用 Light 风格
+@import "basic/color.scss";                     // 默认颜色
+@import "basic/global.scss";                    // 全局 CSS 样式
+@import "basic/animation.scss";                 // Basic 动画
 
 // 动画效果
-@import "animation/flying-icon.scss";
+@import "animation/flying-icon.scss";           // 飞翔的 icon 图标动画，参考 /event 页面
 
 // 各页面的样式
-@import "pages/project.scss";
 @import "pages/home.scss";
+@import "pages/project.scss";
 
 // 小控件
 @import "widget/secondary-nav.scss";
 @import "widget/box-shadow-after.scss";
 
 // 插件
-@import "plugins/form-wizard.scss";
+@import "plugins/form-wizard.scss";             // form 步骤表单
+@import "plugins/toaster.scss";                 // bootstrap toaster 样式
