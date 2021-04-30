@@ -2100,6 +2100,11 @@ button:not(:disabled) {
     font-size: 15px !important;
 }
 
+.modal-content {
+    background: #fff !important;
+    background-color: #fff !important;
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -5527,8 +5532,9 @@ p {
 
 .form-group .icons {
   position: absolute;
-  top: 13px;
-  left: 18px;
+  top: 4px;
+  left: 15px;
+  font-size: 16px;
 }
 
 .map {

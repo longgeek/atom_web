@@ -1,5 +1,4 @@
 <script>
-import { StarIcon } from 'vue-feather-icons';
 import {
     Carousel,
     Slide
@@ -13,11 +12,10 @@ export default {
     data() {
         return {
             events: [],
+            columns: [],
         }
     },
-    components: {
-        StarIcon
-    },
+    components: {},
     created() {
         // 获取活动列表
         this.$http.post(
@@ -28,6 +26,14 @@ export default {
                 this.events = rsp.data.data.records;
             }
         })
+
+        // 获取专栏列表
+        this.$http.get(this.$api.column.list())
+            .then((rsp) => {
+                if (rsp.data.code === 200) {
+                    this.columns = rsp.data.data;
+                }
+            })
     }
 }
 </script>
@@ -37,26 +43,27 @@ export default {
     <!-- Hero Start -->
     <section class="bg-half bg-light d-table w-100">
         <div class="animation-flying-icon-1">
-            <i class="mdi mdi-account-multiple text-primary effect-icon"></i>
+            <i class="uil uil-users-alt text-primary effect-icon"></i>
         </div>
         <div class="animation-flying-icon-2">
-            <i class="mdi mdi-speaker-wireless text-warning effect-icon"></i>
+            <i class="uil uil-podium text-warning effect-icon"></i>
         </div>
         <div class="animation-flying-icon-3">
-            <i class="mdi mdi-volume-source text-info effect-icon"></i>
+            <i class="uil uil-megaphone text-info effect-icon"></i>
         </div>
         <div class="animation-flying-icon-4">
-            <i class="mdi mdi-wallet-giftcard text-danger effect-icon"></i>
+            <i class="uil uil-gift text-danger effect-icon"></i>
         </div>
         <div class="animation-flying-icon-5">
-            <i class="mdi mdi-human-greeting text-primary effect-icon"></i>
+            <i class="uil uil-brain text-primary effect-icon"></i>
         </div>
         <div class="animation-flying-icon-6">
-            <i class="mdi mdi-calendar-month-outline text-danger effect-icon"></i>
+            <i class="uil uil-schedule text-danger effect-icon"></i>
         </div>
         <div class="animation-flying-icon-7">
-            <i class="mdi mdi-teach text-info effect-icon"></i>
+            <i class="uil uil-robot text-info effect-icon"></i>
         </div>
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
@@ -94,8 +101,8 @@ export default {
                                     <img :src="event.cover" class="img-fluid" alt="">
                                     <div class="overlay bg-dark"></div>
                                     <div class="author">
-                                        <small class="text-light user d-block"><i class="mdi mdi-map-marker"></i> {{ event.hostCity }}</small>
-                                        <small class="text-light date"><i class="mdi mdi-calendar-check"></i> {{ event.conveneTime }}</small>
+                                        <small class="text-light user d-block"><i class="uil uil-map-marker"></i> {{ event.hostCity }}</small>
+                                        <small class="text-light date"><i class="uil uil-calendar-alt"></i> {{ event.conveneTime }}</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -110,8 +117,8 @@ export default {
                 </div -->
 
 
-                <div class="col-lg-4 col-md-6 col-12 mb-4 pb-2">
-                    <router-link :to="{name: 'event-column', query: {id: 1}}">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 pb-2" v-for="(column, index) in columns" :key="index">
+                    <router-link :to="{name: 'event-column', query: {id: column.columnId}}">
                         <div class="card blog rounded border-0 shadow overflow-hidden">
                             <div class="position-relative">
                                 <img src="images/event/column/column-banner.jpg" class="card-img-top" alt="..." />
@@ -125,11 +132,11 @@ export default {
                                 </div>
                             </div>
                             <div class="card-body content">
-                                <h6 class="text-dark">开发者大会专栏-入口</h6>
-                                <p class="text-muted mt-3">假数据，记得删除 event.intro | limitTo(110)</p>
+                                <h6 class="text-dark">{{ column.columnTitle }}</h6>
+                                <p class="text-muted mt-3">{{ column.columnDescribe | limitTo(110) }}</p>
                                 <ul class="list-unstyled d-flex justify-content-between border-top mt-3 pt-3 mb-0">
-                                    <li class="text-muted small">event.conveneTime</li>
-                                    <li class="text-muted small">event.hostCity</li>
+                                    <li class="text-muted small">{{ column.conveneTime }}</li>
+                                    <li class="text-muted small">{{ column.hostCity }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -182,8 +189,8 @@ export default {
                                     <img :src="event.cover" class="img-fluid" alt="">
                                     <div class="overlay bg-dark"></div>
                                     <div class="author">
-                                        <small class="text-light user d-block"><i class="mdi mdi-map-marker"></i> {{ event.hostCity }}</small>
-                                        <small class="text-light date"><i class="mdi mdi-calendar-check"></i> {{ event.conveneTime }}</small>
+                                        <small class="text-light user d-block"><i class="uil uil-map-marker"></i> {{ event.hostCity }}</small>
+                                        <small class="text-light date"><i class="uil uil-calendar-alt"></i> {{ event.conveneTime }}</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -222,8 +229,8 @@ export default {
                                     <img :src="event.cover" class="img-fluid" alt="">
                                     <div class="overlay bg-dark"></div>
                                     <div class="author">
-                                        <small class="text-light user d-block"><i class="mdi mdi-map-marker"></i> {{ event.hostCity }}</small>
-                                        <small class="text-light date"><i class="mdi mdi-calendar-check"></i> {{ event.conveneTime }}</small>
+                                        <small class="text-light user d-block"><i class="uil uil-map-marker"></i> {{ event.hostCity }}</small>
+                                        <small class="text-light date"><i class="uil uil-calendar-alt"></i> {{ event.conveneTime }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +248,7 @@ export default {
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="main-icon rounded-pill text-primary text-center mt-4 pt-2">
-                        <star-icon class="fea icon-md-sm"></star-icon>
+                        <i class="uil uil-star"></i>
                     </div>
                     <div class="timeline-page pt-2 position-relative">
                         <router-link to="/">

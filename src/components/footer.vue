@@ -1,29 +1,16 @@
 <script>
-import {
-    FacebookIcon,
-    InstagramIcon,
-    TwitterIcon,
-    LinkedinIcon,
-    MailIcon,
-} from "vue-feather-icons";
 export default {
     data() {
         return {};
     },
-    components: {
-        FacebookIcon,
-        InstagramIcon,
-        TwitterIcon,
-        LinkedinIcon,
-        MailIcon,
-    },
+    components: {},
 };
 </script>
 
 <template>
     <div>
         <!-- Footer Start -->
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-12 mb-0 pb-0 pb-md-2">
@@ -35,23 +22,14 @@ export default {
                         </p>
                         <ul class="list-unstyled social-icon social mb-0 mt-4">
                             <li class="list-inline-item">
-                                <a href="javascript:void(0)" class="rounded"
+                                <img src='https://con.openatom.cn/img/wechat.54784f5b.jpg' width=100 />
+                                <!-- a href="javascript:void(0)" class="rounded"
                                     v-b-tooltip.hover
                                     v-b-tooltip.html
                                     title="<img src='https://con.openatom.cn/img/wechat.54784f5b.jpg' width=100>"
                                 >
-                                    <i class="mdi mdi-wechat"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item ml-1">
-                                <a href="https://weibo.com/u/7495008325" target="_blank" class="rounded">
-                                    <i class="mdi mdi-sina-weibo"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item ml-1">
-                                <a href="https://twitter.com/0ptlEua40J852op" target="_blank" class="rounded">
-                                    <i class="mdi mdi-twitter"></i>
-                                </a>
+                                    <i class="uil uil-chat"></i>
+                                </a -->
                             </li>
                         </ul>
                         <!--end icon-->
@@ -63,31 +41,31 @@ export default {
                         <ul class="list-unstyled footer-list mt-4">
                             <li>
                                 <a class="text-foot" href="mailto: sponsorship@openatom.org" target="_blank">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     项目捐赠：sponsorship@openatom.org
                                 </a>
                             </li>
                             <li>
                                 <a class="text-foot" href="mailto: legal@openatom.org" target="_blank">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     法律问题：legal@openatom.org
                                 </a>
                             </li>
                             <li>
                                 <a class="text-foot" href="mailto: media@openatom.org" target="_blank">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     媒体合作：media@openatom.org
                                 </a>
                             </li>
                             <li>
                                 <a class="text-foot" href="mailto: hr@openatom.org" target="_blank">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     工作机会：hr@openatom.org
                                 </a>
                             </li>
                             <li>
                                 <a class="text-foot" href="mailto: public@openatom.org" target="_blank">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     供应商自荐：public@openatom.org
                                 </a>
                             </li>
@@ -100,13 +78,13 @@ export default {
                         <ul class="list-unstyled footer-list mt-4">
                             <li>
                                 <router-link to="/privacy" class="text-foot">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     隐私政策
                                 </router-link>
                             </li>
                             <li>
                                 <router-link to="/terms" class="text-foot">
-                                    <i class="mdi mdi-chevron-right mr-1"></i>
+                                    <i class="uil uil-angle-right mr-1"></i>
                                     法规信息
                                 </router-link>
                             </li>

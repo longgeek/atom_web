@@ -60,9 +60,9 @@
                                         </th>
                                         <td class="text-muted">{{ topic.topicContent }}</td>
                                         <td class="text-success" width="10%">{{ topic.topicProgressName }}</td>
-                                        <td class="text-muted" width="20%"></td>
+                                        <td class="text-muted" width="20%">{{ topic.createTime }}</td>
                                         <td>
-                                            <a v-b-modal="'edit' + topic.topicId" class="pointer badge badge-pill badge-outline-secondary mb-1">编辑</a>
+                                            <a v-b-modal="'edit' + topic.topicId" class="pointer badge badge-pill badge-outline-secondary mb-1 mr-1">编辑</a>
                                             <b-modal
                                                 :id="'edit' + topic.topicId"
                                                 title="修改议题内容"

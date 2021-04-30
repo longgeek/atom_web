@@ -1,13 +1,4 @@
 import {
-    ArrowUpIcon,
-    ArrowDownIcon,
-    FacebookIcon,
-    InstagramIcon,
-    TwitterIcon,
-    LinkedinIcon,
-    PlayIcon
-} from 'vue-feather-icons';
-import {
     Carousel,
     Slide
 } from 'vue-carousel';
@@ -53,13 +44,6 @@ export default {
     components: {
         Carousel,
         Slide,
-        ArrowUpIcon,
-        ArrowDownIcon,
-        FacebookIcon,
-        InstagramIcon,
-        TwitterIcon,
-        LinkedinIcon,
-        PlayIcon,
         Navbar,
         Council,
         "vue-typer": VueTyper,

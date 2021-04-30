@@ -1,7 +1,6 @@
 <script>
     import Navbar from "@/components/navbar";
     import Footer from "@/components/footer";
-    import { ArrowUpIcon } from "vue-feather-icons";
 
     export default {
         data() {
@@ -12,7 +11,6 @@
         components: {
             Navbar,
             Footer,
-            ArrowUpIcon,
         },
         page: {
             // All subcomponent titles will be injected into this template.
@@ -36,7 +34,7 @@
             id="back-to-top"
             v-scroll-to="'#topnav'"
         >
-            <arrow-up-icon class="icons"></arrow-up-icon>
+            <i class="uil uil-arrow-up icons"></i>
         </a>
         <!-- Back to top -->
     </div>

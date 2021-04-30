@@ -37,14 +37,14 @@ export default {
                 <div class="mt-4">
                     <div class="media align-items-center mb-2">
                         <div class="media-body">
-                            <i class="mdi mdi-phone mr-3"></i>
-                            <a href="javascript:void(0)" class="text-muted">{{ user.phone }}</a>
+                            <i class="uil uil-mobile-android mr-3 text-muted"></i>
+                            <span>{{ user.phone }}</span>
                         </div>
                     </div>
                     <div class="media align-items-center mb-2">
                         <div class="media-body">
-                            <i class="mdi mdi-email mr-3"></i>
-                            <a href="javascript:void(0)" class="text-muted">{{ user.email }}</a>
+                            <i class="uil uil-envelope mr-3 text-muted"></i>
+                            <span>{{ user.email }}</span>
                         </div>
                     </div>
                 </div>

@@ -12,10 +12,19 @@ const request = axios.create({
 
 // 2. 请求拦截器
 request.interceptors.request.use(config => {
-     config.data = JSON.stringify(config.data);
-     config.headers = {
-        'Content-Type': 'application/json;charset=UTF-8',
-     }
+    // formdata 类型无需 json 化
+    if (Object.prototype.toString.call(config.data) != '[object FormData]') {
+        config.data = JSON.stringify(config.data);
+    }
+
+    // 兼容手工传递 headers
+    config.headers = config.config || {};
+    if (!config.headers['Content-Type']) {
+        config.headers['Content-Type'] = 'application/json;charset=UTF-8';
+    }
+
+    // 移除传递过来的 config key
+    if (config.hasOwnProperty('config')) delete config.config;
 
     // 从 localStorage 中获取登录 token，并配置在请求头中
     const token = localStorage.getItem('logintoken');

@@ -1,5 +1,4 @@
 <script>
-import { ArrowRightIcon } from "vue-feather-icons";
 import { Carousel, Slide } from "vue-carousel";
 import { VueTyper } from "vue-typer";
 import countTo from "vue-count-to";
@@ -16,7 +15,6 @@ export default {
         };
     },
     components: {
-        ArrowRightIcon,
         Carousel,
         Slide,
         countTo,
@@ -43,11 +41,6 @@ export default {
             }
         })
     },
-    method: {
-        aaa() {
-            console.log('---');
-        }
-    }
 };
 </script>
 
@@ -95,7 +88,7 @@ export default {
                             </p>
                             <div class="mt-4 pt-2">
                                 <a :href="$vars.registerUrl" class="btn btn-primary rounded">
-                                    <i class="mdi mdi-google-my-business mr-2"></i>
+                                    <i class="uil uil-arrow-right mr-2"></i>
                                     现在，加入我们
                                 </a>
                             </div>
@@ -154,7 +147,7 @@ export default {
                 <br />
                 <div class="col-lg-12 text-center col-md-4 mt-3">
                     <router-link :to="{name: 'project'}" class="btn btn-primary">
-                        查看更多 <arrow-right-icon class="fea icon-sm"></arrow-right-icon>
+                        查看更多 <i class="uil uil-arrow-right ml-2"></i>
                     </router-link>
                 </div>
                 <!--end col-->
@@ -193,19 +186,19 @@ export default {
                                         </h1>
                                         <ul class="list-unstyled mb-0 h5">
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-heart text-white"></i>
+                                                <i class="uil uil-heart text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-heart text-white"></i>
+                                                <i class="uil uil-heart text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-heart text-white"></i>
+                                                <i class="uil uil-heart text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-heart text-white"></i>
+                                                <i class="uil uil-heart text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-heart text-white"></i>
+                                                <i class="uil uil-heart text-white"></i>
                                             </li>
                                         </ul>
                                         <span class="text-white-50">捐赠项目</span>
@@ -221,25 +214,24 @@ export default {
                                                 :startVal="1"
                                                 :duration="8000"
                                                 :endVal="100"
-                                                :easingFn="aaa"
                                             ></countTo
                                             >+
                                         </h1>
                                         <ul class="list-unstyled mb-0 h5">
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-star text-white"></i>
+                                                <i class="uil uil-star text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-star text-white"></i>
+                                                <i class="uil uil-star text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-star text-white"></i>
+                                                <i class="uil uil-star text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-star text-white"></i>
+                                                <i class="uil uil-star text-white"></i>
                                             </li>
                                             <li class="list-inline-item">
-                                                <i class="mdi mdi-star text-white"></i>
+                                                <i class="uil uil-star text-white"></i>
                                             </li>
                                         </ul>
                                         <span class="text-white-50">合作单位</span>

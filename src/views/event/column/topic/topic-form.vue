@@ -40,10 +40,13 @@
     };
 
     const methods = {
+        download(url) {
+            this.$http.get(url);
+        },
         /*
          *  初始化方法
          */
-        init() {
+        async init() {
             // 1. 获取用户信息 - 填充到 step1
             this.user = JSON.parse(localStorage.getItem('user'));
             if (!this.user) return;
@@ -53,6 +56,9 @@
             this.step1.company = this.user.enterprise;
 
             // 2. 获取用户演讲经历、开源贡献 - 填充到 step1
+            if (!this.user.hasOwnProperty('experience')) {
+                await this.getUserExperience();
+            }
             this.experience = this.user.experience;
             this.step1.keynote_experience = this.user.experience.opKeynoteExperience;
             this.step1.contribution = this.user.experience.opContribution;
@@ -78,6 +84,21 @@
                     }
                 })
         },
+        // 获取用户开源经历
+        getUserExperience() {
+            return new Promise((resolve, reject) => {
+                this.$http.get(this.$api.users.experience())
+                    .then((rsp) => {
+                        if (rsp.data.code === 200) {
+                            this.user.experience = rsp.data.data;
+                            localStorage.setItem('user', JSON.stringify(this.user));
+                            resolve(this.user);
+                        } else {
+                            reject();
+                        }
+                })
+            })
+        },
         /*
          * 表单点击下一步触发的事件
          */
@@ -87,7 +108,8 @@
                     this.submitStep1(props);
                     return;
                 }
-                window.location.href = this.$vars.registerUrl;
+                window.location.href = `${this.$vars.registerUrl}?next_url=${encodeURIComponent(window.location.href)}`;
+                return;
             }
             if (props.activeTabIndex == 1) this.submitStep2(props);
             if (props.activeTabIndex == 2) this.$router.push({name: 'profile-topic'});
@@ -134,7 +156,7 @@
             if (this.$v.step2.$invalid) {
                 // 根据表单错误项输出提示内容
                 if (this.$v.step2.title.$error) { this.errorMsg = '请输入议题名称' }
-                else if (this.$v.step2.intro.$error) { this.errorMsg = '请在下拉框中选择一个议题类型' }
+                else if (this.$v.step2.type.$error) { this.errorMsg = '请在下拉框中选择一个议题类型' }
                 else if (this.$v.step2.intro.$error) { this.errorMsg = '请输入议题内容简介' }
                 else if (this.$v.step2.catalog.$error) { this.errorMsg = '请输入议题内容大纲' }
                 else if (this.$v.step2.reward.$error) { this.errorMsg = '请输入议题听众收益' }
@@ -188,7 +210,24 @@
                 this.$http.put(this.$api.users.experience_edit(this.experience.opExperienceId), params);
             }
 
-            // 3. 提交议题
+            // 3. 判断是否有附件需要上传
+            if (this.step2.attach) {
+                const data = new FormData();
+                data.append('docFile', this.step2.attach);
+                let headers = {'Content-Type': 'multipart/form-data'};
+
+                this.$http.post(this.$api.file.upload(), data, headers)
+                    .then((rsp) => {
+                        if (rsp.data.code === 200) {
+                            this.submitTopic(props, rsp.data.data.baseUrl + ' ' + rsp.data.data.filename);
+                        }
+                })
+            } else {
+                this.submitTopic(props);
+            }
+        },
+        // 4. 提交议题
+        submitTopic(props, attach={}) {
             const data = {
                 columnId: this.columnId ? parseInt(this.columnId) : this.topic.columnId,
                 topicTitle: this.step2.title,
@@ -198,7 +237,7 @@
                 topicAdmin: this.step1.name,
                 topicAdminDescribe: this.step1.company + '、' + this.step1.job,
                 topicEstimateDuration: 20,
-                topicFile: this.step2.attach,
+                topicFile: attach,
                 topicTypeId: this.step2.type,
                 participationWay: this.step2.topic_type,
                 remarks: this.step2.memo,
@@ -215,7 +254,7 @@
             // 切换到 step3 重置完成
             props.nextTab();
             this.finished = true;
-        },
+        }
     }
 
     export default {
@@ -240,26 +279,26 @@
                 name: { required, minLength: minLength(2), maxLength: maxLength(32) },
                 job: { required, minLength: minLength(2), maxLength: maxLength(16) },
                 company: { required, minLength: minLength(4), maxLength: maxLength(30) },
-                keynote_experience: { required, minLength: minLength(4), maxLength: maxLength(255) },
-                contribution: { required, minLength: minLength(4), maxLength: maxLength(255) },
+                keynote_experience: { required, minLength: minLength(2), maxLength: maxLength(255) },
+                contribution: { required, minLength: minLength(2), maxLength: maxLength(255) },
             },
             step2: {
                 topic_type: { required },
                 title: { required, minLength: minLength(2), maxLength: maxLength(32) },
                 type: { required },
-                intro: { required, minLength: minLength(4), maxLength: maxLength(255) },
-                catalog: { required, minLength: minLength(4), maxLength: maxLength(255) },
-                reward: { required, minLength: minLength(4), maxLength: maxLength(255) },
+                intro: { required, minLength: minLength(2), maxLength: maxLength(255) },
+                catalog: { required, minLength: minLength(2), maxLength: maxLength(255) },
+                reward: { required, minLength: minLength(2), maxLength: maxLength(255) },
             },
         },
     }
 </script>
 <template>
     <form-wizard shape="tab" color="#0f69b2" class="pb-2">
-        <tab-content icon="mdi mdi-account-circle" title="个人信息">
+        <tab-content icon="uil uil-user-circle" title="个人信息">
             <div v-if="useType != 'view'">
                 <p class="text-primary" v-if="!errorMsg">
-                    <i class="mdi mdi-information-outline mr-1"></i>
+                    <i class="uil uil-info-circle mr-1"></i>
                     请在下方填写演讲者的个人信息，方便我们了解您，便于审核
                 </p>
                 <p class="text-center text-danger" v-else>{{ errorMsg }}</p>
@@ -323,39 +362,43 @@
                 </div>
             </form>
         </tab-content>
-        <tab-content icon="mdi mdi-face-profile" title="议题内容">
+        <tab-content icon="uil uil-file-info-alt" title="议题内容">
             <p class="text-center text-danger" v-if="errorMsg">{{ errorMsg }}</p>
             <form class="form-horizontal needs-validation" @submit.stop.prevent="submitStep2">
                 <div class="form-group">
                     <label class="text-muted mr-3 mb-0">选择议题参与方式:</label>
-                    <label
-                        class="inline mr-4 mb-0"
+                    <div class="custom-control custom-radio custom-control-inline"
                         :class="{'text-primary': step2.topic_type == 1}"
                     >
-                        <input
-                            type="radio"
-                            class="mr-2"
-                            v-model="step2.topic_type"
-                            value="1"
-                            id="keynote"
-                            :disabled="useType == 'view' || !user"
-                        />
-                        <label class="mb-0" for="personal">主题演讲</label>
-                    </label>
-                    <label
-                        class="inline mb-0"
+                        <div class="form-group mb-0">
+                            <input
+                                type="radio"
+                                id="customRadio1"
+                                name="customRadio"
+                                class="custom-control-input"
+                                v-model="step2.topic_type"
+                                value="1"
+                                :disabled="useType == 'view' || !user"
+                            />
+                            <label class="custom-control-label" for="customRadio1">主题演讲</label>
+                        </div>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline"
                         :class="{'text-primary': step2.topic_type == 2}"
                     >
-                        <input
-                            type="radio"
-                            class="mr-2"
-                            v-model="step2.topic_type"
-                            value="2"
-                            id="panel"
-                            :disabled="useType == 'view' || !user"
-                        />
-                        <label class="mb-0" for="panel">圆桌会议</label>
-                    </label>
+                        <div class="form-group mb-0">
+                            <input
+                                type="radio"
+                                id="customRadio2"
+                                name="customRadio"
+                                class="custom-control-input"
+                                v-model="step2.topic_type"
+                                value="2"
+                                :disabled="useType == 'view' || !user"
+                            />
+                            <label class="custom-control-label" for="customRadio2">圆桌会议</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input
@@ -420,16 +463,25 @@
                     <b-form-file
                         accept=".ppt, .pdf, .word, .pages"
                         v-model="step2.attach"
-                        placeholder="上传 PPT 初稿等材料(可选)"
+                        :placeholder="step2.attach ? step2.attach.split(' ')[1] : '上传 PPT 初稿等材料(可选)'"
                         drop-placeholder="Drop file here..."
-                        :disabled="useType == 'view' || !user"
+                        v-if="useType != 'view' && user"
+                        browse-text="选择文件"
                     ></b-form-file>
+                    <a
+                        v-else
+                        class="text-primary pointer"
+                        @click="download(step2.attach.split(' ')[0])"
+                    >
+                        <i class="uil uil-file mr-2"></i>
+                        {{ step2.attach.split(' ')[1] }}
+                    </a>
                 </div>
             </form>
         </tab-content>
-        <tab-content icon="mdi mdi-checkbox-marked-circle-outline" title="提交完成" v-if="useType != 'view'">
+        <tab-content icon="uil uil-check-circle" title="提交完成" v-if="useType != 'view'">
             <div class="text-center text-primary">
-                <h2><i class="mdi mdi-check-all"></i></h2>
+                <h2><i class="uil uil-check"></i></h2>
                 <div v-if="!useType">
                     <h4 class="mt-3">成功！</h4>
                     <p class="mt-3">本次议题已提交成功，<br />可通过下方按钮或个人主页中 "我的议题" 进行查看状态。</p>
@@ -491,10 +543,3 @@
         </template>
     </form-wizard>
 </template>
-
-<style>
-    .custom-file-input~.custom-file-label[data-browse]::after,
-    .custom-file-input:lang(en) ~ .custom-file-label::after {
-        content: '选择文件';
-    }
-</style>

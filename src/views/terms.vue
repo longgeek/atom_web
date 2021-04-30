@@ -1,5 +1,4 @@
 <script>
-import { ArrowRightIcon } from 'vue-feather-icons';
 /**
  * Page-terms component
  */
@@ -8,9 +7,7 @@ export default {
     data() {
         return {}
     },
-    components: {
-        ArrowRightIcon
-    }
+    components: {}
 }
 </script>
 
@@ -67,16 +64,16 @@ export default {
                             <p class="text-muted">本网站包含的所有文字、图片、音乐、视频、动画、商标、图案、图表、可视界面及计算机编码（“内容”），包括但不限于内容的创意、设计、结构、表现方式、呈现结果等，均属本网站所有、受本网站控制或者由本网站获得合法授权而使用。除非本使用条款明确规定，未经本网站事先书面同意，您不得为任何商业目的以任何方式使用本网站的内容。您可以从本网站下载本网站提供的关于本网站内容和服务的信息，前提是：</p>
                             <ul class="list-unstyled text-muted">
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>仅出于个人而非商业目的；
+                                    <i class="uil uil-arrow-right mr-2"></i>仅出于个人而非商业目的；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>不对该类信息作任何修改；
+                                    <i class="uil uil-arrow-right mr-2"></i>不对该类信息作任何修改；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>不对该类信息及载有信息的文件做出进一步的陈述和保证；
+                                    <i class="uil uil-arrow-right mr-2"></i>不对该类信息及载有信息的文件做出进一步的陈述和保证；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>不移除任何表明本网站所有权等合法权益的声明或者通知;
+                                    <i class="uil uil-arrow-right mr-2"></i>不移除任何表明本网站所有权等合法权益的声明或者通知;
                                 </li>
                             </ul>
 
@@ -96,13 +93,13 @@ export default {
                             <p class="text-muted">本网站保留在任何时候不经通知进行以下行为的权利：</p>
                             <ul class="list-unstyled text-muted">
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>基于任何原因，暂停或终止本网站全部或部分的运行和访问；
+                                    <i class="uil uil-arrow-right mr-2"></i>基于任何原因，暂停或终止本网站全部或部分的运行和访问；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>修改或变更本网站的全部或部分内容及其适用的政策或条款；
+                                    <i class="uil uil-arrow-right mr-2"></i>修改或变更本网站的全部或部分内容及其适用的政策或条款；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>在进行定期或非定期维护、错误纠正或其他变更所必须时，中断本网站全部或部分的运行和访问;
+                                    <i class="uil uil-arrow-right mr-2"></i>在进行定期或非定期维护、错误纠正或其他变更所必须时，中断本网站全部或部分的运行和访问;
                                 </li>
                             </ul>
 
@@ -119,19 +116,19 @@ export default {
                             <p class="text-muted">本协议第十条“限制限制”及第十一条“赔偿”的约定各自独立生效，即使其被认定为无法达成其基本目的或无法依法强制执行。在相关有效法律允许的范围内，第十条和第十一条的法律责任限制都应当适用，而不考虑造成损失的原因是否因为：</p>
                             <ul class="list-unstyled text-muted">
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>违反合同；
+                                    <i class="uil uil-arrow-right mr-2"></i>违反合同；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>违反保证；
+                                    <i class="uil uil-arrow-right mr-2"></i>违反保证；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>过错或侵权行为，包括疏忽及失实陈述；
+                                    <i class="uil uil-arrow-right mr-2"></i>过错或侵权行为，包括疏忽及失实陈述；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>严格责任；
+                                    <i class="uil uil-arrow-right mr-2"></i>严格责任；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>任何其他原因;
+                                    <i class="uil uil-arrow-right mr-2"></i>任何其他原因;
                                 </li>
                             </ul>
 
@@ -142,16 +139,16 @@ export default {
                             <p class="text-muted">您同意，若本网站认为您违反了本使用条款，本网站可以自行决定且无需提前通知，终止您访问本网站的权限和/或阻止您访问本网站。因对本使用条款的任何违反而导致本网站终止您访问本网站的权限，本网站概不对您或任何第三方承担责任。您同意，本网站可自行决定且无需提前通知，因下列原因终止您访问本网站全部或部分功能的权限，包括(但不限于)：</p>
                             <ul class="list-unstyled text-muted">
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>应法律执行机构或其他政府机构的要求；
+                                    <i class="uil uil-arrow-right mr-2"></i>应法律执行机构或其他政府机构的要求；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>应您的要求（如您要求删除账户，则可能无法享受在线购物功能）；
+                                    <i class="uil uil-arrow-right mr-2"></i>应您的要求（如您要求删除账户，则可能无法享受在线购物功能）；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>本网站或本网站提供的任何服务的中止或重大修改；
+                                    <i class="uil uil-arrow-right mr-2"></i>本网站或本网站提供的任何服务的中止或重大修改；
                                 </li>
                                 <li>
-                                    <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>不可预期的技术问题。
+                                    <i class="uil uil-arrow-right mr-2"></i>不可预期的技术问题。
                                 </li>
                             </ul>
 

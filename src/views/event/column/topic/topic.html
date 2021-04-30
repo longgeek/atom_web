@@ -31,7 +31,14 @@
                             </li>
                         </ul>
                         <div class="mt-4 pt-2">
-                            <a href="javascript:void(0)" class="btn btn-pills btn-primary m-1">查看详细规则</a>
+                            <a href="javascript:void(0)" class="btn btn-primary m-1" v-scroll-to="'#topic-type'">
+                                查看大会选题方向
+                                <i class="uil uil-angle-right"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="btn btn-outline-primary m-1" v-scroll-to="'#topic-submit'">
+                                立即提交议题
+                                <i class="uil uil-angle-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +55,7 @@
     </section>
     <!--end section-->
 
-    <section class="section border-bottom">
+    <section class="section border-bottom" id="topic-type">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
@@ -195,7 +202,7 @@
     </section>
     <!--end section-->
 
-    <section class="section border-bottom bg-light">
+    <section class="section border-bottom bg-light" id="topic-submit">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">

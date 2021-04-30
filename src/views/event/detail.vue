@@ -28,25 +28,25 @@ export default {
     <!-- Hero Start -->
     <section class="bg-half bg-light d-table w-100">
         <div class="animation-flying-icon-1">
-            <i class="mdi mdi-account-multiple text-primary effect-icon"></i>
+            <i class="uil uil-users-alt text-primary effect-icon"></i>
         </div>
         <div class="animation-flying-icon-2">
-            <i class="mdi mdi-speaker-wireless text-warning effect-icon"></i>
+            <i class="uil uil-podium text-warning effect-icon"></i>
         </div>
         <div class="animation-flying-icon-3">
-            <i class="mdi mdi-volume-source text-info effect-icon"></i>
+            <i class="uil uil-megaphone text-info effect-icon"></i>
         </div>
         <div class="animation-flying-icon-4">
-            <i class="mdi mdi-wallet-giftcard text-danger effect-icon"></i>
+            <i class="uil uil-gift text-danger effect-icon"></i>
         </div>
         <div class="animation-flying-icon-5">
-            <i class="mdi mdi-human-greeting text-primary effect-icon"></i>
+            <i class="uil uil-brain text-primary effect-icon"></i>
         </div>
         <div class="animation-flying-icon-6">
-            <i class="mdi mdi-calendar-month-outline text-danger effect-icon"></i>
+            <i class="uil uil-schedule text-danger effect-icon"></i>
         </div>
         <div class="animation-flying-icon-7">
-            <i class="mdi mdi-teach text-info effect-icon"></i>
+            <i class="uil uil-robot text-info effect-icon"></i>
         </div>
         <div class="container">
             <div class="row justify-content-center">
@@ -56,10 +56,10 @@ export default {
                         <p class="text-muted para-desc mx-auto">{{ event.intro }}</p>
                         <ul class="list-unstyled text-warning">
                             <li class="list-inline-item mr-3">
-                                <i class="mdi mdi-map-marker mr-2"></i>{{ event.hostCity }}
+                                <i class="uil uil-map-marker mr-2"></i>{{ event.hostCity }}
                             </li>
                             <li class="list-inline-item mr-3">
-                                <i class="mdi mdi-calendar-clock mr-2"></i>{{ event.conveneTime.split(' ')[0] }}
+                                <i class="uil uil-calendar-alt mr-2"></i>{{ event.conveneTime.split(' ')[0] }}
                             </li>
                         </ul>
                     </div>

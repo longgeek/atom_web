@@ -27,12 +27,16 @@ const api = {
         list:                       ()              => { return url + '/client/members/list' },
     },
     column: {
+        list:                       ()              => { return url + '/atom_column/column/column' },
         topic:                      ()              => { return url + '/atom_column/column/topic' },
         topic_edit:                 (id)            => { return url + '/atom_column/column/topic/' + id },
         topic_type:                 (id)            => { return url + '/atom_column/column/topic/type/' + id },
         topic_detail:               (id)            => { return url + '/atom_column/column/topic/' + id },
         topic_remove:               (id)            => { return url + '/atom_column/column/topic/' + id },
         detail:                     (id)            => { return url + '/atom_column/column/column/' + id },
+    },
+    file: {
+        upload:                     ()              => { return url + '/atom_column/up_file/doc/upload' },
     },
 }
 

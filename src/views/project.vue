@@ -1,6 +1,4 @@
 <script>
-import { ArrowRightIcon } from 'vue-feather-icons';
-
 /**
  * Project component
  */
@@ -11,9 +9,7 @@ export default {
             projects: [],
         }
     },
-    components: {
-        ArrowRightIcon
-    },
+    components: {},
     created() {
         // 获取捐赠项目列表
         this.$http.post(
@@ -158,8 +154,7 @@ export default {
                     <div class="col-md-4">
                         <div class="section-title">
                             <div class="media">
-                                <i class="mdi mdi-checkbox-multiple-marked-circle-outline
-                                    display-4 text-white title-dark"></i>
+                                <i class="uil uil-shield-check display-4 text-white title-dark"></i>
                                 <div class="media-body ml-4">
                                     <h6 class="font-weight-bold text-light title-dark mt-4">项目孵化政策及条件：</h6>
                                 </div>

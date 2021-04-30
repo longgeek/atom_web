@@ -10,6 +10,7 @@ export default {
         };
     },
     created() {
+        localStorage.removeItem('user');
         localStorage.removeItem('logintoken');
         window.location.href = this.$vars.loginUrl;
     }

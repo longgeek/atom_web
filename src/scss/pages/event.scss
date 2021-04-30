@@ -9,4 +9,10 @@
         min-height: 130px;
         max-height: 130px;
     }
+    .card.blog h6 {
+        white-space: nowrap;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }

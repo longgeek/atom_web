@@ -1,6 +1,4 @@
 <script>
-import { HomeIcon } from 'vue-feather-icons';
-
 /**
  * Page-error component
  */
@@ -8,9 +6,7 @@ export default {
     data() {
         return {}
     },
-    components: {
-        HomeIcon
-    }
+    components: {}
 }
 </script>
 
@@ -18,7 +14,7 @@ export default {
 <div>
     <div class="back-to-home rounded d-none d-sm-block">
         <router-link to="/" class="btn btn-icon btn-soft-primary">
-            <home-icon class="icons"></home-icon>
+            <i class="uil uil-home icons"></i>
         </router-link>
     </div>
 

@@ -1,26 +1,3 @@
-import {
-  ArrowUpIcon,
-  FacebookIcon,
-  InstagramIcon,
-  TwitterIcon,
-  LinkedinIcon,
-  GithubIcon,
-  YoutubeIcon,
-  GitlabIcon,
-  MailIcon,
-  UserPlusIcon,
-  UsersIcon,
-  MessageCircleIcon,
-  BellIcon,
-  ToolIcon,
-  UserIcon,
-  KeyIcon,
-  PhoneIcon,
-  BookmarkIcon,
-  UserCheckIcon,
-  GlobeIcon,
-} from "vue-feather-icons";
-
 /**
  * Shop-products component
  */
@@ -31,28 +8,7 @@ export default {
             user: {},
         }
     },
-    components: {
-        ArrowUpIcon,
-        FacebookIcon,
-        TwitterIcon,
-        LinkedinIcon,
-        GithubIcon,
-        YoutubeIcon,
-        GitlabIcon,
-        InstagramIcon,
-        MailIcon,
-        UserPlusIcon,
-        UsersIcon,
-        BellIcon,
-        ToolIcon,
-        UserIcon,
-        KeyIcon,
-        PhoneIcon,
-        BookmarkIcon,
-        MessageCircleIcon,
-        UserCheckIcon,
-        GlobeIcon,
-    },
+    components: {},
     created() {
         // 获取用户信息
         this.user = JSON.parse(localStorage.getItem('user'));

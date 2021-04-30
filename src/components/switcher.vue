@@ -80,7 +80,7 @@ export default {
         <a href="javascript: void(0);" class="btn btn-sm w-100 btn-dark light-version t-light mt-2" @click="setLight()">Light</a>
     </div>
     <div class="bottom">
-        <a href="javascript: void(0);" class="settings bg-white shadow d-block" @click="ToogleMenu"><i class="mdi mdi-cog ml-1 mdi-24px position-absolute mdi-spin text-primary"></i></a>
+        <a href="javascript: void(0);" class="settings bg-white shadow d-block" @click="ToogleMenu"><i class="uil uil-cog ml-1 position-absolute text-primary"></i></a>
     </div>
 </div>
 <!-- End Style switcher -->

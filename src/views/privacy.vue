@@ -1,6 +1,4 @@
 <script>
-import { ArrowRightIcon } from 'vue-feather-icons';
-
 /**
  * Page-privacy component
  */
@@ -9,9 +7,7 @@ export default {
     data() {
         return {}
     },
-    components: {
-        ArrowRightIcon
-    }
+    components: {}
 }
 </script>
 
@@ -70,43 +66,43 @@ export default {
                                                 <p class="text-muted faq-ans">我们可能将您的个人数据用于以下目的：</p>
                                                 <ul class="list-unstyled text-muted">
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>创建账户。
+                                                        <i class="uil uil-arrow-right mr-2"></i>创建账户。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>实现您的交易或服务请求，包括交付、激活或验证内容或服务；提供培训及认证并管理和处理培训及认证结果；参加线上或线下活动；应您的要求进行变更或者提供您请求的信息（例如内容或服务的资料、白皮书）；以及提供技术支持。
+                                                        <i class="uil uil-arrow-right mr-2"></i>实现您的交易或服务请求，包括交付、激活或验证内容或服务；提供培训及认证并管理和处理培训及认证结果；参加线上或线下活动；应您的要求进行变更或者提供您请求的信息（例如内容或服务的资料、白皮书）；以及提供技术支持。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>在您同意的情况下，与您联系；向您发送有关您可能感兴趣的内容和服务的信息；邀请您参与我们活动（包括促销活动）、市场调查或满意度调查；或向您发送营销信息。如果您不想接收此类信息，则可以随时退订。
+                                                        <i class="uil uil-arrow-right mr-2"></i>在您同意的情况下，与您联系；向您发送有关您可能感兴趣的内容和服务的信息；邀请您参与我们活动（包括促销活动）、市场调查或满意度调查；或向您发送营销信息。如果您不想接收此类信息，则可以随时退订。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>向您发送重要通知，如操作系统或应用程序更新和安装的通知。
+                                                        <i class="uil uil-arrow-right mr-2"></i>向您发送重要通知，如操作系统或应用程序更新和安装的通知。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>为您提供个性化用户体验和个性化内容。
+                                                        <i class="uil uil-arrow-right mr-2"></i>为您提供个性化用户体验和个性化内容。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>认证和管理供应商及业务合作伙伴，与供应商及业务合作伙伴沟通或开展业务。
+                                                        <i class="uil uil-arrow-right mr-2"></i>认证和管理供应商及业务合作伙伴，与供应商及业务合作伙伴沟通或开展业务。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>开展内部审计、数据分析和研究，改善我们的内容和服务。
+                                                        <i class="uil uil-arrow-right mr-2"></i>开展内部审计、数据分析和研究，改善我们的内容和服务。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>分析业务运营效率并衡量市场份额。
+                                                        <i class="uil uil-arrow-right mr-2"></i>分析业务运营效率并衡量市场份额。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>在您选择向我们发送错误详情的情况下排查错误。
+                                                        <i class="uil uil-arrow-right mr-2"></i>在您选择向我们发送错误详情的情况下排查错误。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>同步、共享和存储您上传或下载的数据以及执行上传和下载所需的数据。
+                                                        <i class="uil uil-arrow-right mr-2"></i>同步、共享和存储您上传或下载的数据以及执行上传和下载所需的数据。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>保护我们内容、服务和客户或用户的安全，执行与改善我们的防损和反欺诈计划。
+                                                        <i class="uil uil-arrow-right mr-2"></i>保护我们内容、服务和客户或用户的安全，执行与改善我们的防损和反欺诈计划。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>在您选择向我们发送错误详情的情况下排查错误。
+                                                        <i class="uil uil-arrow-right mr-2"></i>在您选择向我们发送错误详情的情况下排查错误。
                                                     </li>
                                                     <li>
-                                                        <arrow-right-icon class="fea icon-sm mr-2"></arrow-right-icon>遵从和执行适用的法律要求，相关的行业标准或我们的政策。
+                                                        <i class="uil uil-arrow-right mr-2"></i>遵从和执行适用的法律要求，相关的行业标准或我们的政策。
                                                     </li>
                                                 </ul>
                                                 <p class="text-muted faq-ans">我们还可能收集和使用非识别性数据。非识别性数据是指无法用于确定个人身份的数据。例如，我们会收集汇总的统计数据，例如网站访问量。我们收集此数据的目的在于了解用户如何使用自己的网站、内容和服务。借此，我们可以改善自己的服务，更好地满足客户需求。我们可能会自行决定出于其他目的收集、使用、处理、转移或披露非识别性数据。 我们会尽力隔离您的个人数据和非识别性数据，并单独使用这两种数据。如果个人数据掺杂了非识别性数据，依旧会被视作个人数据处理。</p>

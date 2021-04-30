@@ -37,39 +37,41 @@ module.exports = {
         contentBase:path.join(__dirname, 'public'),
         proxy: {
             "/client": {
-                // target: "http://test.openatom.cn",
-                target: "http://192.168.1.141:3000",
+                target: "http://test.openatom.cn",
+                // target: "http://192.168.1.141:3000",
                 changeOrigin: true,
                 ws: true,
                 secure: false,
-                pathRewrite: {
-                    "^/client": "/atom_services/openatom_client"
-                }
+                // pathRewrite: {
+                //     "^/client": "/atom_services/openatom_client"
+                // }
             },
             "/uploads": {
-                // target: "http://test.openatom.cn",
-                target: "http://192.168.1.141:3000",
+                target: "http://test.openatom.cn",
+                // target: "http://192.168.1.141:3000",
                 changeOrigin: true,
                 ws: true,
-                pathRewrite: {
-                    "^/client": "/atom_services/openatom_client"
-                }
+                // pathRewrite: {
+                //     "^/uploads": "/atom_services/up_file"
+                // }
             },
             "/atomavatar": {
-                target: "http://192.168.1.141:8080",
+                target: "http://test.openatom.cn",
+                // target: "http://192.168.1.141:8080",
                 changeOrigin: true,
                 ws: true,
-                pathRewrite: {
-                    "^/atomavatar": "/"
-                }
+                // pathRewrite: {
+                //     "^/atomavatar": "/"
+                // }
             },
             "/atom_column": {
-                target: "http://192.168.1.141:3000",
+                target: "http://test.openatom.cn",
+                // target: "http://192.168.1.141:3000",
                 changeOrigin: true,
                 ws: true,
-                pathRewrite: {
-                    "^/atom_column": "/atom_services"
-                }
+                // pathRewrite: {
+                //     "^/atom_column": "/atom_services"
+                // }
             },
         }
     },
