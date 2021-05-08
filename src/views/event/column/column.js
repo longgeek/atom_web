@@ -4,7 +4,7 @@ import {
 } from 'vue-carousel';
 
 import Navbar from "@/components/navbar";
-import Council from "@/components/council";
+import ColumnGuest from "./column-guest";
 import { VueTyper } from "vue-typer";
 
 /**
@@ -22,22 +22,16 @@ export default {
             hours: "",
             seconds: "",
             endtime: "2021.10.15 09:00:00",
+            partners: [],
             partner: [
-                'AlibabaGroup.svg',
-                'Baidu.svg',
-                'HUAWEI.svg',
-                'JointForce.svg',
-                'Inspur.svg',
-                'HYPERCHAIN.svg',
-                '360.svg',
-                'Tencent.svg',
-                'CMB.svg',
-                'PATEO.svg',
-                'CSG.svg',
-                'OSCHINA.svg',
-                'ECARX.svg',
-                'Geekbang.svg',
-                'HIT_SZ.svg'
+                'images/event/column/partner/infoq.png',
+                'images/event/column/partner/csdn.png',
+                'images/event/column/partner/segmentfault.png',
+                'images/event/column/partner/oschina.png',
+                'images/event/column/partner/kaiyuanshe.png',
+                'images/event/column/partner/51cto.png',
+                'images/event/column/partner/aaa.png',
+                'images/event/column/partner/站酷海洛.png',
             ],
         }
     },
@@ -45,7 +39,7 @@ export default {
         Carousel,
         Slide,
         Navbar,
-        Council,
+        ColumnGuest,
         "vue-typer": VueTyper,
     },
     mounted() {
@@ -56,6 +50,17 @@ export default {
         this.interval = setInterval(() => {
             this.timerCount(this.start, this.end);
         }, 1000);
+    },
+    created() {
+        // 获取捐赠人
+        this.$http.get(this.$api.partner.list())
+            .then((rsp) => {
+                if (rsp.data.code === 200) {
+                    for (let i in rsp.data.data) {
+                        this.partners = this.partners.concat(rsp.data.data[i].logos);
+                    }
+                }
+            })
     },
     methods: {
         timerCount: function (start, end) {

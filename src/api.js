@@ -26,6 +26,9 @@ const api = {
     members: {
         list:                       ()              => { return url + '/client/members/list' },
     },
+    partner: {
+        list:                       ()              => { return url + '/client/jsoncon?jfile=cooperativeLogo' },
+    },
     column: {
         list:                       ()              => { return url + '/atom_column/column/column' },
         topic:                      ()              => { return url + '/atom_column/column/topic' },

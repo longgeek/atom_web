@@ -6,33 +6,18 @@ export default {
     page: { title: '合作者关系' },
     data() {
         return {
-            platinum: [
-                'AlibabaGroup.svg',
-                'Baidu.svg',
-                'HUAWEI.svg',
-                'JointForce.svg',
-                'Inspur.svg',
-                'HYPERCHAIN.svg',
-                '360.svg',
-                'Tencent.svg',
-                'CMB.svg',
-            ],
-            gold: [
-                'PATEO.svg',
-                'CSG.svg',
-                'OSCHINA.svg',
-                'ECARX.svg',
-            ],
-            silver: [
-                'Geekbang.svg',
-            ],
-            general: [
-                'HIT_SZ.svg'
-            ],
+            partners: [],
         };
     },
-    components: {
-    },
+    created() {
+        // 获取捐赠人
+        this.$http.get(this.$api.partner.list())
+            .then((rsp) => {
+                if (rsp.data.code === 200) {
+                    this.partners = rsp.data.data;
+                }
+            })
+    }
 };
 </script>
 
@@ -76,74 +61,17 @@ export default {
         <section class="section border-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12" v-for="(partner, index) in partners" :key="index">
                         <div class="section-title">
-                            <h6 class="mb-4">白金捐赠人</h6>
+                            <h6 class="mb-4">{{ partner.name }}</h6>
                             <p class="mx-auto text-muted mb-4 pb-4">注：以下捐赠人顺序以中文拼音首字母排序</p>
                         </div>
                         <div class="rounded">
                             <div class="row">
                                 <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
-                                    v-for="(p, index) in platinum" :key="index"
+                                    v-for="(logo, index) in partner.logos" :key="index"
                                 >
-                                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                        </div>
-                    </div>
-                    <!--end col-->
-
-                    <div class="col-12 mt-5">
-                        <div class="section-title">
-                            <h6 class="mb-4">金牌捐赠人</h6>
-                            <p class="mx-auto text-muted mb-4 pb-4">注：以下捐赠人顺序以中文拼音首字母排序</p>
-                        </div>
-                        <div class="rounded">
-                            <div class="row">
-                                <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
-                                    v-for="(p, index) in gold" :key="index"
-                                >
-                                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                        </div>
-                    </div>
-                    <!--end col-->
-
-                    <div class="col-12 mt-5">
-                        <div class="section-title">
-                            <h6 class="mb-4">银牌捐赠人</h6>
-                            <p class="mx-auto text-muted mb-4 pb-4">注：以下捐赠人顺序以中文拼音首字母排序</p>
-                        </div>
-                        <div class="rounded">
-                            <div class="row">
-                                <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
-                                    v-for="(p, index) in silver" :key="index"
-                                >
-                                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                        </div>
-                    </div>
-                    <!--end col-->
-
-                    <div class="col-12 mt-5">
-                        <div class="section-title">
-                            <h6 class="mb-4">一般捐赠人</h6>
-                            <p class="mx-auto text-muted mb-4 pb-4">注：以下捐赠人顺序以中文拼音首字母排序</p>
-                        </div>
-                        <div class="rounded">
-                            <div class="row">
-                                <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
-                                    v-for="(p, index) in general" :key="index"
-                                >
-                                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
+                                    <img :src="logo" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
                                 </div>
                                 <!--end col-->
                             </div>

@@ -129,118 +129,69 @@
     </div>
     <!--Shape End-->
 
-    <!-- Speakers Start -->
-    <section class="section bg-light">
+    <!-- section class="section bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="section-title mb-4 pb-2">
                         <h4 class="title mb-4">拟邀嘉宾</h4>
-                        <p class="text-muted para-desc mx-auto mb-0">
-                            业界大咖、华为科学家、顶级技术专家、技术扫地僧将与开发者汇聚一堂。重磅嘉宾阵容揭晓，邀您一起探索ICT领域前沿技术与行业应用。
-                        </p>
+                        <p class="text-muted para-desc mx-auto mb-0"></p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
-            <Council />
+            <ColumnGuest />
         </div>
-        <!--end container-->
-    </section>
+    </section -->
     <!--end section-->
-    <!-- Speakers End -->
 
-    <section class="section border-bottom">
+    <!-- section class="section border-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="section-title mb-4 pb-2">
-                        <h4 class="title mb-4">拟邀参会单位</h4>
-                        <p class="text-muted para-desc mx-auto mb-0">
-                        大会期间大学城周边实行交通管制，请按照指示上下客，严禁私停乱放。
-
-                        丽水路全线禁停，出租车网约车无法候车，请在现场指示下即停即走，做到人等车
-                        </p>
+                        <h4 class="title mb-4">拟邀单位</h4>
+                        <p class="text-muted para-desc mx-auto mb-0"></p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
 
             <div class="row mt-4 pt-4">
-                <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
-                    v-for="(p, index) in partner" :key="index"
-                >
-                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
-                </div>
-                <!--end col-->
-            </div>
-            <!--end row-->
-        </div>
-        <!--end container-->
-    </section>
-
-    <section class="section border-bottom">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <div class="section-title mb-4 pb-2">
-                        <h4 class="title mb-4">赞助商</h4>
-                        <p class="text-muted para-desc mx-auto mb-0">
-                        大会期间大学城周边实行交通管制，请按照指示上下客，严禁私停乱放。
-
-                        丽水路全线禁停，出租车网约车无法候车，请在现场指示下即停即走，做到人等车
-                        </p>
+                <div class="col-12">
+                    <div class="rounded">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
+                                 v-for="(partner, index) in partners" :key="index"
+                            >
+                                <img :src="partner" class="avatar mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
-
-            <div class="row mt-4 pt-4">
-                <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
-                    v-for="(p, index) in partner" :key="index"
-                >
-                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
-                </div>
-                <!--end col-->
-            </div>
-            <!--end row-->
         </div>
-        <!--end container-->
-    </section>
+    </section -->
     <!--end section-->
 
-    <section class="section border-bottom">
+    <!-- section class="section border-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="section-title mb-4 pb-2">
                         <h4 class="title mb-4">合作伙伴</h4>
-                        <p class="text-muted para-desc mx-auto mb-0">
-                        大会期间大学城周边实行交通管制，请按照指示上下客，严禁私停乱放。
-
-                        丽水路全线禁停，出租车网约车无法候车，请在现场指示下即停即走，做到人等车
-                        </p>
+                        <p class="text-muted para-desc mx-auto mb-0"></p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
 
             <div class="row mt-4 pt-4">
                 <div class="col-lg-2 col-md-3 col-6 text-center mb-4"
                     v-for="(p, index) in partner" :key="index"
                 >
-                    <img :src="require('@/assets/images/partners/' + p)" class="avatar border mb-4 animate__animated animate__fadeIn" alt="" width="130" height="130" />
+                    <img :src="`${p}`" class="avatar mb-4 animate__animated animate__fadeIn" alt="" width="130" />
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
         </div>
-        <!--end container-->
-    </section>
+    </section -->
     <!--end section-->
 
     <!-- Shape Start -->
@@ -253,8 +204,8 @@
     </div>
     <!--Shape End-->
 
-    <!-- Price Start -->
-    <section class="section bg-light" id="tickets">
+    <!-- Ticket Start -->
+    <!-- section class="section bg-light" id="tickets">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
@@ -265,9 +216,7 @@
                         </p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
 
             <div class="row align-items-center">
                 <div class="col-md-4 col-12 mt-4 pt-2">
@@ -287,7 +236,6 @@
                         </div>
                     </div>
                 </div>
-                <!--end col-->
 
                 <div class="col-md-4 col-12 mt-4 pt-2">
                     <div class="card pricing-rates best-plan bg-light text-center border rounded">
@@ -305,7 +253,6 @@
                         </div>
                     </div>
                 </div>
-                <!--end col-->
 
                 <div class="col-md-4 col-12 mt-4 pt-2">
                     <div class="card pricing-rates best-plan bg-light text-center border rounded">
@@ -323,17 +270,14 @@
                         </div>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
         </div>
-        <!--end container-->
-    </section>
+    </section -->
     <!--end section-->
-    <!-- Price End -->
+    <!-- Ticket End -->
 
     <!-- News Start -->
-    <section class="section">
+    <!-- section class="section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
@@ -344,9 +288,7 @@
                         </p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 mt-4 pt-2">
@@ -371,7 +313,6 @@
                         </div>
                     </div>
                 </div>
-                <!--end col-->
 
                 <div class="col-lg-4 col-md-6 mt-4 pt-2">
                     <div class="card blog rounded border-0 shadow">
@@ -395,7 +336,6 @@
                         </div>
                     </div>
                 </div>
-                <!--end col-->
 
                 <div class="col-lg-4 col-md-6 mt-4 pt-2">
                     <div class="card blog rounded border-0 shadow">
@@ -419,12 +359,9 @@
                         </div>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
         </div>
-        <!--end container-->
-    </section>
+    </section -->
 
     <!-- Shape Start -->
     <div class="position-relative">

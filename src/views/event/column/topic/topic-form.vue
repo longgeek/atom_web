@@ -396,7 +396,7 @@
                                 value="2"
                                 :disabled="useType == 'view' || !user"
                             />
-                            <label class="custom-control-label" for="customRadio2">圆桌会议</label>
+                            <label class="custom-control-label" for="customRadio2">小组专题讨论</label>
                         </div>
                     </div>
                 </div>
