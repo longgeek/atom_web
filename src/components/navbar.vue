@@ -7,6 +7,7 @@ export default {
         return {
             user: {},
             isCondensed: false,
+            homeUrl: process.env.VUE_APP_BASE_URL || '/',
         };
     },
     props: {
@@ -123,10 +124,10 @@ export default {
             <div class="container">
                 <!-- Logo container-->
                 <div>
-                    <router-link class="logo" to="/" v-if="navLight !== true">
+                    <router-link class="logo" :to="homeUrl" v-if="navLight !== true">
                         <img src="@/assets/images/logo-dark.svg" height="55" alt="" />
                     </router-link>
-                    <router-link class="logo" to="/" v-else>
+                    <router-link class="logo" :to="homeUrl" v-else>
                         <img src="@/assets/images/logo-dark.svg" class="l-dark" height="55" alt="" />
                         <img
                             src="@/assets/images/logo-light.svg"
@@ -199,13 +200,12 @@ export default {
                 </div>
 
                 <div id="navigation">
-                    <!-- Navigation Menu-->
-                    <ul
+                    <!-- ul
                         class="navigation-menu"
                         :class="{ 'nav-light': navLight === true }"
                     >
                         <li :class="{ active: $route.name === 'home'}">
-                            <router-link to="/" class="side-nav-link-ref">首页</router-link>
+                            <router-link :to="homeUrl" class="side-nav-link-ref">首页</router-link>
                         </li>
                         <li :class="{
                             active: $route.name == 'project' ||
@@ -227,8 +227,7 @@ export default {
                         <li :class="{ active: $route.name == 'aboutus'}">
                             <router-link to="/aboutus" class="side-nav-link-ref">关于我们</router-link>
                         </li>
-                    </ul>
-                    <!--end navigation menu-->
+                    </ul -->
                     <div v-if="Object.keys(user).length === 0">
                         <div class="auth-menu-btn d-none">
                             <a :href="$vars.loginUrl" class="btn btn-outline-primary">登录</a>
@@ -261,7 +260,6 @@ export default {
                             </li>
                         </ul>
                     </div>
-                    <!--end login button-->
                 </div>
                 <!--end navigation-->
             </div>
