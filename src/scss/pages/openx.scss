@@ -1,0 +1,58 @@
+.openx {
+    .article-link:hover {
+        cursor: pointer;
+        color: $primary !important;
+    }
+
+    img.opacity-4:hover {
+        cursor: pointer;
+        opacity: 1 !important;
+    }
+}
+
+.openx-topic-article {
+    cursor: pointer;
+}
+
+.attachment {
+    .file-box {
+        text-align: center;
+        .file {
+            border: 1px solid #e7eaec;
+            padding: 0;
+            background-color: #ffffff;
+            position: relative;
+            border-radius: 3px;
+            margin-bottom: 25px;
+
+            .corner {
+                position: absolute;
+                display: inline-block;
+                width: 0;
+                height: 0;
+                line-height: 0;
+                border: 0.6em solid transparent;
+                border-right: 0.6em solid #f1f1f1;
+                border-bottom: 0.6em solid #f1f1f1;
+                right: 0em;
+                bottom: 0em;
+            }
+
+            .icon {
+                padding: 15px 10px;
+                text-align: center;
+
+                i {
+                    font-size: 40px;
+                    color: #e7eaec;
+                }
+            }
+
+            .file-name {
+                padding: 10px;
+                background-color: #f8f8f8;
+                border-top: 1px solid #e7eaec;
+            }
+        }
+    }
+}

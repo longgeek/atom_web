@@ -1,0 +1,78 @@
+<div>
+    <Navbar />
+
+    <section class="bg-half">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="section-title">
+                        <h4 class="title mb-4 text-center">{{ article.name }}</h4>
+                        <div class="d-flex justify-content-between">
+                            <div class="media align-items-center mb-4">
+                                <a class="pr-3" href="#">
+                                    <img
+                                        :src="`${article.author.avatar}`"
+                                        class="img-fluid avatar avatar-md-sm rounded-circle shadow"
+                                        alt="img"
+                                    />
+                                </a>
+                                <div class="commentor-detail">
+                                    <h6 class="mb-0">
+                                        <a
+                                            href="javascript:void(0)"
+                                            class="text-dark media-heading"
+                                        >{{ article.author.name }}</a>
+                                    </h6>
+                                    <small class="text-muted">{{ article.update_time }}</small>
+                                </div>
+                            </div>
+                            <small href="#" class="text-muted mt-3 mr-2">
+                                发布于 {{ article.update_time | toChinaTime }}
+                            </small>
+                        </div>
+                        <div class="sidebar">
+                            <div class="widget mb-4 pb-2">
+                                <div class="tagcloud">
+                                    <a
+                                        href="jvascript:void(0)" class="rounded"
+                                        v-for="(tag, index) in article.tags" :key="index"
+                                    >{{ tag }}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div v-html="$options.filters.toMarkDown(article.content)"></div>
+
+                        <div v-if="article.files.length">
+                            <hr />
+                            <p>
+                                <i class="uil uil-paperclip mr-1"></i> 共有 <b>{{ article.files.length }}</b> 个文件
+                            </p>
+                            <div class="attachment">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-12"
+                                        v-for="(file, index) in article.files" :key="index"
+                                    >
+                                        <div class="file-box">
+                                            <div class="file">
+                                                <a href="#">
+                                                    <span class="corner"></span>
+                                                    <div class="icon">
+                                                        <i class="uil uil-file"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <small>{{ file.filename }}</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

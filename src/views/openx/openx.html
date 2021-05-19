@@ -1,0 +1,277 @@
+<div>
+    <section class="bg-half bg-white d-table w-100" style="background: url('images/bg-openx.png') center;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <div class="page-next-level">
+                        <h3 class="title-dark mb-4">开源研究工作专题组 - <span class="text-primary">OpenX</span></h3>
+                        <p class="text-muted para-desc mb-4 mx-auto">
+                            构建一个公益性的非实体化的研究组织，汇聚国内领先开源人才和智力;
+                            运营一个开放、透明的研究型社区
+                        </p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+
+            <div class="row">
+                <div class="col-md-4 col-12 mt-4 pt-2">
+                    <div class="text-center p-3 rounded" style="background: #fbfbfd;">
+                        <span class="h2 icon2 text-primary">
+                            <i class="uil uil-envelope-heart"></i>
+                        </span>
+                        <div class="mt-1 mb-3">
+                            <h6><a href="javascript:void(0)" class="text-muted">目标</a></h6>
+                            <p class="text-muted mt-3 mb-0">
+                                <small>
+                                    构建一个公益性的非实体化的研究组织，汇聚国内领先开源人才和智力；
+                                    运营一个开放、透明的研究型社区
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="col-md-4 col-12 mt-4 pt-2">
+                    <div class="text-center p-3 rounded" style="background: #fbfbfd;">
+                        <span class="h2 icon2 text-primary">
+                            <i class="uil uil-moneybag-alt"></i>
+                        </span>
+                        <div class="mt-1 mb-3">
+                            <h6><a href="javascript:void(0)" class="text-muted">范围</a></h6>
+                            <p class="text-muted mt-3 mb-0">
+                                <small>开源理论、技术；开源开发、运营、治理、度量等的方法、技术、工具、平台、规范等。</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="col-md-4 col-12 mt-4 pt-2">
+                    <div class="text-center p-3 rounded" style="background: #fbfbfd;">
+                        <span class="h2 icon2 text-primary">
+                            <i class="uil uil-shield-check"></i>
+                        </span>
+                        <div class="mt-1 mb-3">
+                            <h6><a href="javascript:void(0)" class="text-muted">价值</a></h6>
+                            <p class="text-muted mt-3 mb-0">
+                                <small>中立公正、开放透明、高效高质量的开源社区；经过专业研究、实践验证、获得社区认可的开源方法</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+        </div>
+        <!--end container-->
+
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-8">
+                    <div class="section-title text-center text-md-left">
+                        <h5 class="mb-4">OpenX 专栏</h5>
+                        <p class="text-muted mb-0 para-desc">
+                            建立不同层面的开源人才培养体系 技术层面、治理层面、战略层面、布道师层面等 职场、本科院校、大职大专、基础教育等
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <ul class="col container-filter list-unstyled categories-filter mb-0" id="filter">
+                    <li class="list-inline-item">
+                        <a
+                            class="categories border d-block text-dark rounded"
+                            :class="{'active':filterCategory == 'all'}"
+                            @click="updateFilter('all')"
+                        >All</a>
+                    </li>
+                    <li class="list-inline-item" v-for="(item, index) in categories" :key="index">
+                        <a
+                            class="categories border d-block text-dark rounded"
+                            @click="updateFilter(item)"
+                            :class="{'active':filterCategory == item}"
+                        >{{ item }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <!-- div class="col-lg-6 col-12 mt-4 pt-2">
+                    <div class="card blog rounded border-0 shadow overflow-hidden">
+                        <div class="position-relative">
+                            <img src="images/event/column/column-banner.jpg" class="card-img-top" alt="..." height="190">
+                            <div class="overlay bg-dark" style="opacity: 0.4;"></div>
+                            <h5 style="position: absolute; top: 40px; left: 30px; color: #fff;">
+                                <a href="javascript:void(0)" class="card-title title text-light">
+                                    [精选] 区块链开源项目中源代码的开源协议
+                                </a>
+                            </h5>
+                            <div class="teacher d-flex align-items-center opacity">
+                                <img src="images/council/理事-杜玉杰.png" class="avatar avatar-md-sm rounded-circle shadow" alt="">
+                                <div class="ml-2">
+                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-light user">杜玉杰</a></h6>
+                                    <p class="text-light small my-0">两小时前</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <div class="shape overflow-hidden text-white">
+                                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body content">
+                            <p class="text-muted mb-0">
+                                摘要：建立不同层面的开源人才培养体系 技术层面、治理层面、战略层面、布道师层面等 职场、本科院校、大职大专、基础教育等
+                            </p>
+                        </div>
+                    </div>
+                </div -->
+                <!-- div class="col-lg-6 col-12 mt-4 pt-2">
+                    <div class="card blog rounded border-0 shadow overflow-hidden">
+                        <div class="position-relative">
+                            <img src="images/event/column/column-banner.jpg" class="card-img-top" alt="..." height="190">
+                            <div class="overlay bg-dark" style="opacity: 0.4;"></div>
+                            <h5 style="position: absolute; top: 40px; left: 30px; color: #fff;">
+                                <a href="javascript:void(0)" class="card-title title text-light">
+                                    [精选] 区块链开源项目中源代码的开源协议
+                                </a>
+                            </h5>
+                            <div class="teacher d-flex align-items-center opacity">
+                                <img src="images/council/理事-杜玉杰.png" class="avatar avatar-md-sm rounded-circle shadow" alt="">
+                                <div class="ml-2">
+                                    <h6 class="mb-0"><a href="javascript:void(0)" class="text-light user">杜玉杰</a></h6>
+                                    <p class="text-light small my-0">两小时前</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative">
+                            <div class="shape overflow-hidden text-white">
+                                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body content">
+                            <p class="text-muted mb-0">
+                                摘要：建立不同层面的开源人才培养体系 技术层面、治理层面、战略层面、布道师层面等 职场、本科院校、大职大专、基础教育等
+                            </p>
+                        </div>
+                    </div>
+                </div -->
+            </div>
+
+            <div class="row">
+                <div
+                    class="col-lg-3 col-md-6 col-12 mt-4 pt-2"
+                    v-for="(item, index) in filteredData" :key="index"
+                 >
+                    <div class="openx card border-0 features feature-clean course-feature p-2 overflow-hidden shadow">
+                        <div class="card-body">
+                            <router-link class="h6 text-primary" :to="{name: 'openx-topic', params: {type: item.url_name}}">
+                                {{ item.name }}
+                            </router-link>
+                            <p class="text-muted mt-2">
+                                <small> 入驻专家 {{ item.experts.length }} 位 - 发文 {{ item.article_nums }}</small>
+                            </p>
+                            <ul class="media-list list-unstyled mb-1">
+                                <li class="mt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="media align-items-center">
+                                            <a class="pr-3" href="#">
+                                                <img
+                                                    :src="item.aritcle_last.author.avatar"
+                                                    class="img-fluid avatar avatar-ex-sm rounded"
+                                                    alt="img"
+                                                />
+                                            </a>
+                                            <div class="commentor-detail">
+                                                <small href="javascript:void(0)" class="text-dark">{{ item.aritcle_last.author.name }} </small>
+                                                <small class="text-muted">{{ item.aritcle_last.update_time | toChinaTime }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3">
+                                        <router-link
+                                            class="text-muted article-link"
+                                            :to="{name: 'openx-topic-article', params: {type: item.url_name}, query: {id: item.aritcle_last.id}}"
+                                        >
+                                            " {{ item.aritcle_last.name | limitTo(25) }}
+                                            <span v-if="item.aritcle_last.name.length >= 25">&nbsp;...</span>"
+                                        </router-link>
+                                    </p>
+                                </li>
+                            </ul>
+                            <carousel
+                                :per-page="5"
+                                dir="ltr"
+                                :autoplay="true"
+                                :loop="false"
+                                :paginationEnabled="false"
+                            >
+                                <Slide v-for="(item, index) in item.experts" :key="index">
+                                    <img
+                                        :src="`${item.avatar}`"
+                                        class="img-fluid avatar avatar-ex-sm rounded-circle opacity-4"
+                                        alt=""
+                                    />
+                                </Slide>
+                            </carousel>
+                            <i :class="item.icon + ' text-primary full-img'"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 推荐专栏 -->
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center mb-4 pb-4">
+                <div class="col-md-8">
+                    <div class="section-title text-center text-md-left">
+                        <h5 class="mb-4">推荐专栏</h5>
+                        <p class="text-muted mb-0 para-desc">
+                            高质量的创作内容栏目
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="media align-items-center shadow rounded p-4 features">
+                        <div class="icons m-0 rounded h2 text-primary text-center px-3">
+                            <i :class="recommend[0].icon"></i>
+                        </div>
+                        <div class="content ml-4">
+                            <h6 class="mb-1"><a href="javascript:void(0)" class="text-dark">{{ recommend[0].name }}</a></h6>
+                            <p class="text-muted mb-0">{{ recommend[0].intro }}</p>
+                            <div class="mt-2">
+                                <router-link class="h6 text-primary" :to="{name: 'openx-topic', params: {type: recommend[0].url_name}}">
+                                    <a href="javascript:void(0)" class="btn btn-sm btn-soft-primary">查看专栏</a>
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="media align-items-center shadow rounded p-4 features">
+                        <div class="icons m-0 rounded h2 text-primary text-center px-3">
+                            <i :class="recommend[1].icon"></i>
+                        </div>
+                        <div class="content ml-4">
+                            <h6 class="mb-1"><a href="javascript:void(0)" class="text-dark">{{ recommend[1].name }}</a></h6>
+                            <p class="text-muted mb-0">{{ recommend[1].intro }}</p>
+                            <div class="mt-2">
+                                <router-link class="h6 text-primary" :to="{name: 'openx-topic', params: {type: recommend[1].url_name}}">
+                                    <a href="javascript:void(0)" class="btn btn-sm btn-soft-primary">查看专栏</a>
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

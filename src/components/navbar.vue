@@ -124,10 +124,10 @@ export default {
             <div class="container">
                 <!-- Logo container-->
                 <div>
-                    <router-link class="logo" :to="homeUrl" v-if="navLight !== true">
+                    <a class="logo" :href="homeUrl" v-if="navLight !== true">
                         <img src="@/assets/images/logo-dark.svg" height="55" alt="" />
-                    </router-link>
-                    <router-link class="logo" :to="homeUrl" v-else>
+                    </a>
+                    <a class="logo" :href="homeUrl" v-else>
                         <img src="@/assets/images/logo-dark.svg" class="l-dark" height="55" alt="" />
                         <img
                             src="@/assets/images/logo-light.svg"
@@ -135,7 +135,7 @@ export default {
                             height="55"
                             alt=""
                         />
-                    </router-link>
+                    </a>
                 </div>
                 <div class="auth-button" v-if="Object.keys(user).length === 0">
                     <a

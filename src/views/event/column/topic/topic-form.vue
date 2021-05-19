@@ -227,7 +227,7 @@
             }
         },
         // 4. 提交议题
-        submitTopic(props, attach={}) {
+        submitTopic(props, attach="") {
             const data = {
                 columnId: this.columnId ? parseInt(this.columnId) : this.topic.columnId,
                 topicTitle: this.step2.title,

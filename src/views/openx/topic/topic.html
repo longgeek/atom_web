@@ -1,0 +1,192 @@
+<div>
+    <Navbar />
+
+    <!-- OpenX Topic Header -->
+    <section class="section border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="bg-light p-5 rounded-md shadow mr-lg-5">
+                        <img
+                            :src="`${topic.image}`"
+                            class="img-fluid mx-auto d-block"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="section-title">
+                        <h4 class="title mb-4">
+                            <span class="text-muted">OpenX <i class="uil uil-angle-right"></i></span>
+                            <span class="text-primary">{{ topic.name }}</span>
+                        </h4>
+                        <p class="text-muted para-desc">{{ topic.intro }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-100 mt-60">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="media features feature-clean">
+                        <div class="icons text-primary text-center mx-auto">
+                            <i class="uil uil-user d-block rounded h3 mb-0"></i>
+                        </div>
+                        <div class="content ml-3">
+                            <h6 class="mb-1">
+                                <a href="javascript:void(0)" class="text-dark">{{ topic.experts.length }} 位专家</a>
+                            </h6>
+                            <p class="text-muted mb-0">连接产学研共建开源生态，为开源项目找到更多的应用场景</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                    <div class="media features feature-clean">
+                        <div class="icons text-primary text-center mx-auto">
+                            <i class="uil uil-file d-block rounded h3 mb-0"></i>
+                        </div>
+                        <div class="content ml-3">
+                            <h6 class="mb-1">
+                                <a href="javascript:void(0)" class="text-dark">{{ topicFileNums }} 篇学术文章</a>
+                            </h6>
+                            <p class="text-muted mb-0">连接产学研共建开源生态，为开源项目找到更多的应用场景</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 mt-lg-0 pt-lg-0">
+                    <div class="media features feature-clean">
+                        <div class="icons text-primary text-center mx-auto">
+                            <i class="uil uil-star d-block rounded h3 mb-0"></i>
+                        </div>
+                        <div class="content ml-3">
+                            <h6 class="mb-1">
+                                <a href="javascript:void(0)" class="text-dark">8w 人关注</a>
+                            </h6>
+                            <p class="text-muted mb-0">连接产学研共建开源生态，为开源项目找到更多的应用场景</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- OpenX Topic Header End -->
+
+    <section class="section bg-white d-table w-100">
+        <div class="container">
+            <div class="row align-items-center mb-4 pb-4">
+                <div class="col-md-8">
+                    <div class="section-title text-center text-md-left">
+                        <h5 class="mb-4">专栏文章</h5>
+                        <p class="text-muted mb-0 para-desc">
+                            建立不同层面的开源人才培养体系 技术层面、治理层面、战略层面、布道师层面等 职场、本科院校、大职大专、基础教育等
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 mb-4" v-for="(article, index) in topic.aritcles" :key="index">
+                    <router-link :to="{name: 'openx-topic-article', params: {type: topic.url_name}, query: {id: article.id}}">
+                        <div class="card blog rounded border-0 shadow overflow-hidden openx-topic-article">
+                            <div class="position-relative">
+                                <img :src="article.image" class="card-img-top" alt="...">
+                                <div class="overlay bg-dark opacity-5"></div>
+                                <div class="teacher d-flex align-items-center opacity">
+                                    <img :src="article.author.avatar" class="avatar avatar-md-sm rounded-circle shadow" alt="">
+                                    <div class="ml-2">
+                                        <b class="mb-0"><a href="javascript:void(0)" class="text-white user">{{ article.author.name }}</a></b>
+                                        <p class="text-light small my-0">{{ article.update_time }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body content">
+                                <h6 class="mt-2">
+                                    <a href="javascript:void(0)" class="title text-dark">
+                                        {{ article.name | limitTo(15) }}
+                                        <span v-if="article.name.length >= 15">&nbsp;...</span>
+                                    </a>
+                                </h6>
+                                <p class="text-muted">
+                                    {{ article.content | limitTo(40) }}
+                                    <span v-if="article.content.length >= 40">&nbsp;...</span>
+                                </p>
+                                <ul class="list-unstyled d-flex justify-content-between border-top mt-3 pt-3 mb-0">
+                                    <li class="text-muted small">
+                                        <i class="uil uil-file"></i>{{ article.files.length }} 文档
+                                    </li>
+                                    <li class="text-muted small ml-3">
+                                        <i class="uil uil-clock"></i>
+                                        <span v-if="(article.content.length / 10 / 60) > 1">
+                                            {{ (article.content.length / 5 / 60).toFixed(0) }}m
+                                        </span>
+                                        <span v-else>1m</span>
+                                    </li>
+                                    <li class="text-muted small ml-3">
+                                        <i class="uil uil-eye"></i> {{ article.views }} 次查看
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center mb-4 pb-4">
+                <div class="col-md-8">
+                    <div class="section-title text-center text-md-left">
+                        <h5 class="mb-4">专栏专家</h5>
+                        <p class="text-muted mb-0 para-desc">
+                            建立不同层面的开源人才培养体系 技术层面、治理层面、战略层面、布道师层面等 职场、本科院校、大职大专、基础教育等
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-12 mt-4">
+                    <div class="card bg-light border-0 border-bottom">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-sm-7">
+                                    <div class="text-sm-left">
+                                        <b class="mb-0">连接产学研共建开源生态，为开源项目找到更多的应用场景</b>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 mt-4 mt-sm-0">
+                                    <div class="text-sm-right">
+                                        <a href="javascript:void(0)" class="btn btn-outline-primary disabled">
+                                            <i class="mdi mdi-file-document-outline"></i> 申请加入
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <carousel id="customer-testi"
+                        :per-page="3"
+                        dir="ltr"
+                        :autoplay="true"
+                        :loop="true"
+                        :perPageCustom="[[0, 1], [300, 1], [380, 2], [768, 3], [1199, 3]]"
+                    >
+                        <Slide v-for="(item, index) in topic.experts" :key="index">
+                            <div class="card customer-testi border-0 text-center bg-light">
+                                <div class="card-body">
+                                    <img
+                                        :src="`${item.avatar}`"
+                                        class="img-fluid avatar avatar-small rounded-circle mx-auto shadow"
+                                        alt=""
+                                    />
+                                    <p class="text-muted mt-4">" {{ item.job }} "</p>
+                                    <b class="text-dark">{{ item.name }}</b>
+                                </div>
+                            </div>
+                        </Slide>
+                    </carousel>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

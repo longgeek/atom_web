@@ -50,6 +50,21 @@ const routes = [
         component: () => import('@/views/partner')
     },
     {
+        path: '/openx',
+        name: 'openx',
+        component: () => import('@/views/openx/openx.vue')
+    },
+    {
+        path: '/openx/topic/:type',
+        name: 'openx-topic',
+        component: () => import('@/views/openx/topic/topic.vue')
+    },
+    {
+        path: '/openx/topic/:type/article:id?',
+        name: 'openx-topic-article',
+        component: () => import('@/views/openx/topic/article/article.vue')
+    },
+    {
         path: '/aboutus',
         name: 'aboutus',
         component: () => import('@/views/aboutus')

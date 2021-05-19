@@ -30,16 +30,16 @@ const api = {
         list:                       ()              => { return url + '/client/jsoncon?jfile=cooperativeLogo' },
     },
     column: {
-        list:                       ()              => { return url + '/atom_column/column/column' },
-        topic:                      ()              => { return url + '/atom_column/column/topic' },
-        topic_edit:                 (id)            => { return url + '/atom_column/column/topic/' + id },
-        topic_type:                 (id)            => { return url + '/atom_column/column/topic/type/' + id },
-        topic_detail:               (id)            => { return url + '/atom_column/column/topic/' + id },
-        topic_remove:               (id)            => { return url + '/atom_column/column/topic/' + id },
-        detail:                     (id)            => { return url + '/atom_column/column/column/' + id },
+        list:                       ()              => { return url + '/client/column/column' },
+        topic:                      ()              => { return url + '/client/column/topic' },
+        topic_edit:                 (id)            => { return url + '/client/column/topic/' + id },
+        topic_type:                 (id)            => { return url + '/client/column/topic/type/' + id },
+        topic_detail:               (id)            => { return url + '/client/column/topic/' + id },
+        topic_remove:               (id)            => { return url + '/client/column/topic/' + id },
+        detail:                     (id)            => { return url + '/client/column/column/' + id },
     },
     file: {
-        upload:                     ()              => { return url + '/atom_column/up_file/doc/upload' },
+        upload:                     ()              => { return url + '/uploads/doc/upload' },
     },
 }
 
